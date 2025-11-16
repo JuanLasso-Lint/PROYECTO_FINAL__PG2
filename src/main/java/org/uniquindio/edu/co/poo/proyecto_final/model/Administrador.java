@@ -12,7 +12,7 @@ public class Administrador extends Persona{
 
 
 
-    public Administrador(String nombre, String identificacion, String telefono) {
+    public Administrador(String idAdministrador,String nombre, String identificacion, String telefono) {
         super(nombre, identificacion, telefono);
         this.idAdministrador = identificacion;
         this.listaDeUsuarios = new ArrayList<>();
@@ -33,13 +33,14 @@ public class Administrador extends Persona{
         this.listaDeUsuarios = listaDeUsuarios;
     }
 
+    public List<Repartidor> getListaDeRepartidores() {
+        return listaDeRepartidores;
+    }
 
-
-
-
-
-
-//Se crea la logica de registro (Crud) de clientes (Usuarios con Optional)
+    public void setListaDeRepartidores(List<Repartidor> listaDeRepartidores) {
+        this.listaDeRepartidores = listaDeRepartidores;
+    }
+    //Se crea la logica de registro (Crud) de clientes (Usuarios con Optional)
 
     private Optional<Usuario> buscarUsuario(String idUsuario){
         return listaDeUsuarios.stream().filter(u -> u.getIdUsuario().equals(idUsuario)).findFirst();
@@ -185,16 +186,28 @@ public class Administrador extends Persona{
     }
 
 
+    /**Este metodo calcula el tiempo promerdio de entrega Este métod recorre la lista de envios de plataforma los filtra
+     *tanto fecha de salida como fecha de entrega real definidas, calcula la duración en minutos de cada envío y obtiene la media
+**/
+    public double tiempoPromedioEntrega(Plataforma plataforma) {
 
+        List<EnvioBuilder> envios = plataforma.getListaEnvios();
 
+        List<Long> tiempos = envios.stream()
+                .filter(e -> e.getFechaHoraSalida() != null && e.getFechaHoraEntregaReal() != null)
+                .map(e -> java.time.Duration.between(
+                        e.getFechaHoraSalida(),
+                        e.getFechaHoraEntregaReal()
+                ).toMinutes())
+                .toList();
 
+        if (tiempos.isEmpty()) {
+            return 0;
+        }
 
+        long suma = tiempos.stream().mapToLong(Long::longValue).sum();
 
-
-
-
-
-
-
+        return (double) suma / tiempos.size();
+    }
 
 }
