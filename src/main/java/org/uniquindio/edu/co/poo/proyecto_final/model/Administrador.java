@@ -9,7 +9,7 @@ public class Administrador extends Persona{
     private String idAdministrador;
     private List<Usuario> listaDeUsuarios;
     private List<Repartidor> listaDeRepartidores;
-    
+
 
 
     public Administrador(String nombre, String identificacion, String telefono) {
