@@ -9,10 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PantallaInicioController {
-
-    @FXML
-    private Button OpUsuario;
+public class PantallaInicioViewController {
 
     @FXML
     private void AgendarConsulta(ActionEvent event) throws IOException {

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 
-public class DatosIncorrectosController {
+public class DatosIncorrectosViewController {
 
     @FXML
     private Button Regresar;

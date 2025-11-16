@@ -7,15 +7,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1"
-      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="109.0" prefWidth="384.0"
-      fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.DatosIncorrectosController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="384.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.DatosIncorrectosViewController">
    <children>
       <Separator layoutX="15.0" layoutY="58.0" prefHeight="2.0" prefWidth="355.0" />
       <Text layoutX="64.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATOS INGRESADOS INCORRECTOS O YA EXISTENTES" />
-      <Button id="Regresar" layoutX="156.0" layoutY="70.0" mnemonicParsing="false" text="REGRESAR" onAction="#regresarInicio" />
+      <Button fx:id="Regresar" layoutX="156.0" layoutY="70.0" mnemonicParsing="false" onAction="#regresarInicio" text="REGRESAR" />
       <ImageView fitHeight="34.0" fitWidth="41.0" layoutX="23.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../Images/Incorrecto.png" />
