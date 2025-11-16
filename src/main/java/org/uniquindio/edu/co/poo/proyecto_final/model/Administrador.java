@@ -9,7 +9,7 @@ public class Administrador extends Persona{
     private String idAdministrador;
     private List<Usuario> listaDeUsuarios;
     private List<Repartidor> listaDeRepartidores;
-    private List<EnvioBuilder>  listaDeEnvios;
+    
 
 
     public Administrador(String nombre, String identificacion, String telefono) {
@@ -148,9 +148,9 @@ public class Administrador extends Persona{
 
 
     //metodo para asignar un envio al repartidor
-    public boolean asignarRepartidor(Repartidor repartidor, EnvioBuilder envio, String estadoEnvio) {
+    public boolean asignarRepartidor(Repartidor repartidor, EnvioBuilder envio, String estadoEnvio, Plataforma plataforma) {
 
-        EnvioBuilder envioAsignado = buscarEnvio(envio.getIdEnvio());
+        EnvioBuilder envioAsignado = plataforma.buscarEnvio(envio.getIdEnvio());
         Optional<Repartidor> rep = buscarRepartidor(repartidor.getIdRepartidor());
 
         if (envioAsignado == null) {
@@ -179,6 +179,7 @@ public class Administrador extends Persona{
         envioAsignado.setRepartidor(repartidor);
         envioAsignado.setEstadoEnvio(estadoEnvio);
         repartidor.agregarListaEnviosDelRepartidor(envioAsignado);
+
 
         return true;
     }
