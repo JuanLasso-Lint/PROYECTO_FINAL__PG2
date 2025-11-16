@@ -26,4 +26,8 @@ public class Usuario extends Persona {
     public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
+
+
+
+
 }
