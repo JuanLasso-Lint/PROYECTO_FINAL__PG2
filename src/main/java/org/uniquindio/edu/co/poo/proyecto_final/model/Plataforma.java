@@ -39,17 +39,29 @@ public class Plataforma {
         return false;
     }
 
-    public void gestionUsuario(String identificacionCuestion) {
-        for (Usuario u : listaUsuarios) {
-            if (u.getIdentificacion().equals(identificacionCuestion)) {
-
-                String nombre = u.getNombre();
-                String identificacion = u.getIdentificacion();
-                String telefono = u.getTelefono();
-                String email = u.getEmail();
-                String idUsuario = u.getIdUsuario();
-
+    public Usuario buscarUsuario(String idUsuario) {
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getIdUsuario().equals(idUsuario)) {
+                return listaUsuarios.get(i);
             }
+        }
+
+        return null;
+    }
+
+    public void gestionUsuario(String nombreNuevo, String identificacionNuevo,
+                               String telefonoNuevo, String emailNuevo,
+                               String idUsuarioBuscar) {
+
+        Usuario u = buscarUsuario(idUsuarioBuscar);
+
+        if (u != null) {
+            u.setNombre(nombreNuevo);
+            u.setIdentificacion(identificacionNuevo);
+            u.setTelefono(telefonoNuevo);
+            u.setEmail(emailNuevo);
+        } else {
+            System.out.println("Usuario no encontrado");
         }
     }
 }
