@@ -4,21 +4,6 @@ import java.util.ArrayList;
 
 public class Plataforma {
 
-    private static Plataforma instance;
-
-    private ArrayList<Usuario> listaUsuarios;
-
-    public Plataforma() {
-        listaUsuarios = new ArrayList<>();
-    }
-
-    public static Plataforma getInstance() {
-        if (instance == null) {
-            instance = new Plataforma();
-        }
-        return instance;
-    }
-
     private ArrayList<Usuario> listaUsuarios;
 
     public Usuario RegistrarUsuario(String nombre, String identificacion, String telefono, String email, String idUsuario) {
@@ -27,27 +12,6 @@ public class Plataforma {
         listaUsuarios.add(usuario);
 
         return usuario;
-    }
-
-    public boolean LogearUsuario(String identificacionA, String idUsuarioA) {
-
-        for (Usuario u : listaUsuarios) {
-            if (u.getIdentificacion().equals(identificacionA) &&
-                    u.getIdUsuario().equals(idUsuarioA)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public void gestionUsuario(String identificacion){
-        for (Usuario u : listaUsuarios) {
-            if (u.getIdentificacion().equals(identificacion)) {
-
-            }
-        }
 
     }
-
 }

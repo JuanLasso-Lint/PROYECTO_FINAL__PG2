@@ -12,9 +12,6 @@ import java.io.IOException;
 public class DatosIncorrectosViewController {
 
     @FXML
-    private void regresarInicio(ActionEvent event) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PantallaInicio.fxml"));
     private Button Regresar;
 
     @FXML
