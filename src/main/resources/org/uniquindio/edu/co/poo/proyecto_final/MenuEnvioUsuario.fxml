@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.MenuEnvioUsuarioViewController">
+   <children>
+      <Text layoutX="60.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que quiere hacer con su envio?" textAlignment="CENTER" wrappingWidth="479.033203125">
+         <font>
+            <Font name="Candara" size="33.0" />
+         </font>
+      </Text>
+      <Button id="crearE" layoutX="126.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="347.0" text="CREAR ENVIO" onAction="#CrearEnvio"/>
+      <Button id="modificarE" layoutX="126.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="347.0" text="MODIFICAR ENVIO" onAction="#ModificarEnvio"/>
+      <Button id="eliminarE" layoutX="126.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="347.0" text="ELIMINAR ENVIO" onAction="#EliminarEnvio" />
+      <Button id="regresar" layoutX="263.0" layoutY="353.0" mnemonicParsing="false" text="REGRESAR" onAction="#regresarInicio"/>
+   </children>
+</Pane>

@@ -25,6 +25,8 @@ public class IniciarSesionUsuarioViewController {
 
         boolean valido = plataforma.LogearUsuario(idusuario.getText(), id.getText());
 
+
+
         if (valido == true){
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PaginaUsuario.fxml"));

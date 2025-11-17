@@ -8,23 +8,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PaginaUsuarioViewController {
+public class MenuEnvioUsuarioViewController {
 
     @FXML
-    private void GestionCliente(ActionEvent event) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/GestionUsuario.fxml"));
-        Scene scene = new Scene(loader.load());
-
-        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
-
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    @FXML
-    private void regresarInicio(ActionEvent event) throws IOException {
+    private void CrearEnvio(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PantallaInicio.fxml"));
         Scene scene = new Scene(loader.load());
@@ -37,9 +24,9 @@ public class PaginaUsuarioViewController {
     }
 
     @FXML
-    private void CotizarTarifa(ActionEvent event) throws IOException {
+    private void ModificarEnvio(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/CotizarTarifa.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PantallaInicio.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
@@ -50,9 +37,9 @@ public class PaginaUsuarioViewController {
     }
 
     @FXML
-    private void MenuEnvio(ActionEvent event) throws IOException {
+    private void EliminarEnvio(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/MenuEnvioUsuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PantallaInicio.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
@@ -62,5 +49,17 @@ public class PaginaUsuarioViewController {
 
     }
 
+    @FXML
+    private void regresarInicio(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesUsuario.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
 }

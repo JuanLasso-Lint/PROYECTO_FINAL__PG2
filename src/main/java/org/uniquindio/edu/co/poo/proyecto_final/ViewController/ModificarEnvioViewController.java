@@ -1,20 +1,14 @@
 package org.uniquindio.edu.co.poo.proyecto_final.ViewController;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import javafx.event.ActionEvent;
 import java.io.IOException;
 
-public class DatosIncorrectosViewController {
-
-    @FXML
-    private Button Regresar;
-
-    //Cambiar Escena
+public class ModificarEnvioViewController {
 
     @FXML
     private void regresarInicio(ActionEvent event) throws IOException {
@@ -28,4 +22,5 @@ public class DatosIncorrectosViewController {
         stage.show();
 
     }
+
 }

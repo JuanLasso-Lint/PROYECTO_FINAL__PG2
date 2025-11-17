@@ -19,7 +19,9 @@
                 <Font name="Candara" size="44.0" />
             </font>
         </Text>
-        <Button fx:id="gestion" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" text="GESTIONAR MIS DATOS" onAction="#GestionCliente"/>
-        <Button fx:id="regresar" layoutX="264.0" layoutY="341.0" mnemonicParsing="false" text="REGRESAR" onAction="#regresarInicio"/>
+        <Button fx:id="gestion" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" onAction="#GestionCliente" text="GESTIONAR MIS DATOS" />
+        <Button fx:id="regresar" layoutX="264.0" layoutY="341.0" mnemonicParsing="false" onAction="#regresarInicio" text="REGRESAR" />
+      <Button fx:id="cotizar" layoutX="61.0" layoutY="153.0" mnemonicParsing="false" onAction="#CotizarTarifa" prefHeight="25.0" prefWidth="144.0" text="COTIZAR TARIFA" />
+      <Button fx:id="envioM" layoutX="62.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="MENU ENVIOS" onAction="#MenuEnvio"/>
     </children>
 </Pane>
