@@ -8,6 +8,9 @@ module org.uniquindio.edu.co.poo.proyecto_final {
     opens org.uniquindio.edu.co.poo.proyecto_final to javafx.fxml;
     opens org.uniquindio.edu.co.poo.proyecto_final.ViewController to javafx.fxml;
 
+    exports org.uniquindio.edu.co.poo.proyecto_final;
+    exports org.uniquindio.edu.co.poo.proyecto_final.ViewController;
+}
 
     exports org.uniquindio.edu.co.poo.proyecto_final;
     exports org.uniquindio.edu.co.poo.proyecto_final.ViewController;
