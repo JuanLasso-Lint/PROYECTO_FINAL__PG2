@@ -30,9 +30,9 @@ class AdministradorTest {
     Direccion direccion3 = new Direccion("007", "lmno", "Calle 44", "Medellín", "4321gh");
 
 
-    Tarifa tarifa1 = new Tarifa();
-    Tarifa tarifa2 = new Tarifa();
-    Tarifa tarifa3 = new Tarifa();
+    Tarifa tarifa1 = new Tarifa(22.5, 287.5, TipoProridad.ALTA, 4500, TipoDistancia.CERCA);
+    Tarifa tarifa2 = new Tarifa(45.2, 320.1, TipoProridad.BAJA, 8000, TipoDistancia.LEJANA);
+    Tarifa tarifa3 = new Tarifa(85.4, 400.0, TipoProridad.MEDIA, 2500, TipoDistancia.LEJANA);
 
 
     // Envío con solo los atributos obligatorios

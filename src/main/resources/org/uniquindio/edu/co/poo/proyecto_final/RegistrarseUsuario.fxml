@@ -31,7 +31,7 @@
       <TextField fx:id="idusuarioU" layoutX="323.0" layoutY="183.0" />
       <Text layoutX="323.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID USUARIO:" />
       <Text layoutX="323.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nota: Recuerde su IDUsuario ya que este es el dato con el que se le reconocera despues" wrappingWidth="218.5078125" />
-      <Button fx:id="aceptar" layoutX="309.0" layoutY="333.0" mnemonicParsing="false" text="ACEPTAR" onAction="#registrarUsuario"/>
-      <Button fx:id="regresar" layoutX="227.0" layoutY="333.0" mnemonicParsing="false" text="REGRESAR" onAction="#regresarInicio"/>
+      <Button fx:id="aceptar" layoutX="309.0" layoutY="333.0" mnemonicParsing="false" onAction="#registrarUsuario" text="ACEPTAR" />
+      <Button fx:id="regresar" layoutX="227.0" layoutY="333.0" mnemonicParsing="false" onAction="#regresarInicio" text="REGRESAR" />
    </children>
 </Pane>
