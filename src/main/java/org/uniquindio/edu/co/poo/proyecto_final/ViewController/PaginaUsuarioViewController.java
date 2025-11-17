@@ -8,25 +8,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class OpcionesUsuarioViewController {
+public class PaginaUsuarioViewController {
 
     @FXML
-    private void RegistrarUsuario(ActionEvent event) throws IOException {
+    private void GestionCliente(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/RegistrarseUsuario.fxml"));
-        Scene scene = new Scene(loader.load());
-
-        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
-
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    @FXML
-    private void IniciarSesionUsuario(ActionEvent event) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/IniciarSesionUsuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/GestionUsuario.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
@@ -48,5 +35,6 @@ public class OpcionesUsuarioViewController {
         stage.show();
 
     }
+
 
 }

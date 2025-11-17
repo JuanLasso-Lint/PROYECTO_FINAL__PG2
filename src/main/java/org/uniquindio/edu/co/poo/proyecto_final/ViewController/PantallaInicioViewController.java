@@ -12,16 +12,15 @@ import java.io.IOException;
 public class PantallaInicioViewController {
 
     @FXML
-    private void AgendarConsulta(ActionEvent event) throws IOException {
+    private void OpcionUsuario(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org.uniquindio.edu.co.poo.proyecto_final/OpcionesUsuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesUsuario.fxml"));
         Scene scene = new Scene(loader.load());
 
-        Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
 
         stage.setScene(scene);
         stage.show();
-
     }
 
 }
