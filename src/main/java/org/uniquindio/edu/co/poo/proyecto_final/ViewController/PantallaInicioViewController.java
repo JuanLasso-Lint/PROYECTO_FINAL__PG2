@@ -12,9 +12,6 @@ import java.io.IOException;
 public class PantallaInicioViewController {
 
     @FXML
-    private void LogearUsuario(ActionEvent event) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesUsuario.fxml"));
     private void AgendarConsulta(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org.uniquindio.edu.co.poo.proyecto_final/OpcionesUsuario.fxml"));
