@@ -16,12 +16,11 @@ public class ProcesoCorrectoViewController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PantallaInicio.fxml"));
         Scene scene = new Scene(loader.load());
 
-        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((javafx.scene.control.Button) event.getSource()).getScene().getWindow();
 
         stage.setScene(scene);
         stage.show();
 
     }
 
-public class ProcesoCorrectoViewController {
 }

@@ -33,12 +33,6 @@ public class RegistrarseUsuarioViewController {
     @FXML
     private void registrarUsuario(ActionEvent event) throws IOException {
 
-        plataforma.RegistrarUsuario(
-    Plataforma plataforma = new Plataforma();
-
-    @FXML
-    private void registrarUsuario() {
-
         Usuario usuario = plataforma.RegistrarUsuario(
                 nombreU.getText(),
                 idU.getText(),
@@ -59,7 +53,6 @@ public class RegistrarseUsuarioViewController {
     @FXML
     private void regresarInicio(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesUsuario.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org.uniquindio.edu.co.poo.proyecto_final/PantallaInicio.fxml"));
         Scene scene = new Scene(loader.load());
 
