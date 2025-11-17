@@ -12,7 +12,8 @@
    <children>
       <ImageView fitHeight="108.0" fitWidth="112.0" layoutX="488.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Images/LogoEmpresa.png" />
+            <Image url="@
+            ../../../../../../Images/LogoEmpresa.png" />
          </image>
       </ImageView>
       <Text layoutX="103.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LLENE LOS CAMPOS REQUERIDOS">
