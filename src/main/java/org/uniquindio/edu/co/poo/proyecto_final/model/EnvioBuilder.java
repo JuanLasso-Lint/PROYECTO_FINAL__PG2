@@ -1,8 +1,7 @@
 package org.uniquindio.edu.co.poo.proyecto_final.model;
 
-import javafx.util.Builder;
-
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class EnvioBuilder {
@@ -11,6 +10,8 @@ public class EnvioBuilder {
     private String estadoEnvio;
     private LocalDate fechaCreacion;
     private LocalDate fechaEstimadaEntrega;
+    private LocalDateTime fechaHoraSalida;
+    private LocalDateTime fechaHoraEntregaReal;
     private List<Incidencia> listaInciencias;
     private Repartidor repartidor;
     private Usuario usuario;
@@ -22,6 +23,8 @@ public class EnvioBuilder {
         this.estadoEnvio = builder.estadoEnvio;
         this.fechaCreacion = builder.fechaCreacion;
         this.fechaEstimadaEntrega = builder.fechaEstimadaEntrega;
+        this.fechaHoraSalida = builder.fechaHoraSalida;
+        this.fechaHoraEntregaReal = builder.fechaHoraEntregaReal;
         this.listaInciencias = builder.listaInciencias;
         this.repartidor = builder.repartidor;
         this.usuario = builder.usuario;
@@ -36,6 +39,8 @@ public class EnvioBuilder {
                 ", estadoEnvio='" + estadoEnvio + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
                 ", fechaEstimadaEntrega=" + fechaEstimadaEntrega +
+                ", fechaHoraSalida=" + fechaHoraSalida +
+                ", fechaHoraEntregaReal=" + fechaHoraEntregaReal +
                 ", listaInciencias=" + listaInciencias +
                 ", repartidor=" + repartidor +
                 ", usuario=" + usuario +
@@ -48,68 +53,84 @@ public class EnvioBuilder {
         return idEnvio;
     }
 
-    public void setIdEnvio(String idEnvio) {
-        this.idEnvio = idEnvio;
-    }
-
     public String getEstadoEnvio() {
         return estadoEnvio;
-    }
-
-    public void setEstadoEnvio(String estadoEnvio) {
-        this.estadoEnvio = estadoEnvio;
     }
 
     public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(LocalDate fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
     public LocalDate getFechaEstimadaEntrega() {
         return fechaEstimadaEntrega;
     }
 
-    public void setFechaEstimadaEntrega(LocalDate fechaEstimadaEntrega) {
-        this.fechaEstimadaEntrega = fechaEstimadaEntrega;
+    public LocalDateTime getFechaHoraSalida() {
+        return fechaHoraSalida;
+    }
+
+    public LocalDateTime getFechaHoraEntregaReal() {
+        return fechaHoraEntregaReal;
     }
 
     public List<Incidencia> getListaInciencias() {
         return listaInciencias;
     }
 
-    public void setListaInciencias(List<Incidencia> listaInciencias) {
-        this.listaInciencias = listaInciencias;
-    }
-
     public Repartidor getRepartidor() {
         return repartidor;
-    }
-
-    public void setRepartidor(Repartidor repartidor) {
-        this.repartidor = repartidor;
     }
 
     public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
     public Direccion getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
-
     public Tarifa getTarifa() {
         return tarifa;
+    }
+
+    public void setIdEnvio(String idEnvio) {
+        this.idEnvio = idEnvio;
+    }
+
+    public void setEstadoEnvio(String estadoEnvio) {
+        this.estadoEnvio = estadoEnvio;
+    }
+
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public void setFechaEstimadaEntrega(LocalDate fechaEstimadaEntrega) {
+        this.fechaEstimadaEntrega = fechaEstimadaEntrega;
+    }
+
+    public void setFechaHoraSalida(LocalDateTime fechaHoraSalida) {
+        this.fechaHoraSalida = fechaHoraSalida;
+    }
+
+    public void setFechaHoraEntregaReal(LocalDateTime fechaHoraEntregaReal) {
+        this.fechaHoraEntregaReal = fechaHoraEntregaReal;
+    }
+
+    public void setListaInciencias(List<Incidencia> listaInciencias) {
+        this.listaInciencias = listaInciencias;
+    }
+
+    public void setRepartidor(Repartidor repartidor) {
+        this.repartidor = repartidor;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 
     public void setTarifa(Tarifa tarifa) {
@@ -118,29 +139,25 @@ public class EnvioBuilder {
 
     public static class Builder {
 
-
-        //Se usa final para que se obligatorio usar estos atributos posteriormente se los crea en el constructor
         private final String idEnvio;
         private final String estadoEnvio;
         private final LocalDate fechaCreacion;
         private final Direccion direccion;
         private final Tarifa tarifa;
 
-
         private LocalDate fechaEstimadaEntrega;
+        private LocalDateTime fechaHoraSalida;
+        private LocalDateTime fechaHoraEntregaReal;
         private List<Incidencia> listaInciencias;
         private Repartidor repartidor;
         private Usuario usuario;
 
-
-        //Constructor con los atributos obligatorios
-        public Builder(String idEnvio, String estadoEnvio, LocalDate fechaCreacion,  Direccion direccion, Tarifa tarifa) {
+        public Builder(String idEnvio, String estadoEnvio, LocalDate fechaCreacion, Direccion direccion, Tarifa tarifa) {
             this.idEnvio = idEnvio;
             this.estadoEnvio = estadoEnvio;
             this.fechaCreacion = fechaCreacion;
             this.direccion = direccion;
             this.tarifa = tarifa;
-
         }
 
         public Builder fechaEstimadaEntrega(LocalDate fechaEstimadaEntrega) {
@@ -148,7 +165,17 @@ public class EnvioBuilder {
             return this;
         }
 
-        public Builder ListaInciencias(List<Incidencia> listaInciencias) {
+        public Builder fechaHoraSalida(LocalDateTime fechaHoraSalida) {
+            this.fechaHoraSalida = fechaHoraSalida;
+            return this;
+        }
+
+        public Builder fechaHoraEntregaReal(LocalDateTime fechaHoraEntregaReal) {
+            this.fechaHoraEntregaReal = fechaHoraEntregaReal;
+            return this;
+        }
+
+        public Builder listaInciencias(List<Incidencia> listaInciencias) {
             this.listaInciencias = listaInciencias;
             return this;
         }
@@ -166,13 +193,5 @@ public class EnvioBuilder {
         public EnvioBuilder build() {
             return new EnvioBuilder(this);
         }
-
-
-
-
     }
-
-
-
-
 }
