@@ -27,7 +27,7 @@ public class IniciarSesionUsuarioViewController {
 
         if (valido == true){
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/ProcesoCorrecto.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PaginaUsuario.fxml"));
             Scene scene = new Scene(loader.load());
 
             Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();

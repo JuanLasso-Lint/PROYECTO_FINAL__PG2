@@ -7,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.PaginaUsuarioViewController">
    <children>
       <ImageView fitHeight="108.0" fitWidth="112.0" layoutX="488.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,6 +19,7 @@
             <Font name="Candara" size="44.0" />
          </font>
       </Text>
-      <Button id="gestion" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" text="GESTIONAR MIS DATOS" />
+      <Button fx:id="gestion" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" text="GESTIONAR MIS DATOS" onAction="#GestionCliente"/>
+      <Button fx:id="regresar" layoutX="264.0" layoutY="341.0" mnemonicParsing="false" text="REGRESAR" onAction="#regresarInicio"/>
    </children>
 </Pane>

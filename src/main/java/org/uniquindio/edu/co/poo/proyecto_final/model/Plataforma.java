@@ -38,4 +38,14 @@ public class Plataforma {
 
         return false;
     }
+
+    public void gestionUsuario(String identificacion){
+        for (Usuario u : listaUsuarios) {
+            if (u.getIdentificacion().equals(identificacion)) {
+
+            }
+        }
+
+    }
+
 }
