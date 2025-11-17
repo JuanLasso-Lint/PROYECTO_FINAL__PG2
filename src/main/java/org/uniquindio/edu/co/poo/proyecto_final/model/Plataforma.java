@@ -39,9 +39,15 @@ public class Plataforma {
         return false;
     }
 
-    public void gestionUsuario(String identificacion){
+    public void gestionUsuario(String identificacionCuestion){
         for (Usuario u : listaUsuarios) {
-            if (u.getIdentificacion().equals(identificacion)) {
+            if (u.getIdentificacion().equals(identificacionCuestion)) {
+
+                String nombre = u.getNombre();
+                String identificacion = u.getIdentificacion();
+                String telefono = u.getTelefono();
+                String email = u.getEmail();
+                String idUsuario = u.getIdUsuario();
 
             }
         }
