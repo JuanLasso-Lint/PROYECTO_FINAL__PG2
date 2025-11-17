@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class EnvioBuilder {
+public class EnvioBuilder implements IEnvio {
 
     private String idEnvio;
     private String estadoEnvio;
@@ -136,6 +136,25 @@ public class EnvioBuilder {
     public void setTarifa(Tarifa tarifa) {
         this.tarifa = tarifa;
     }
+//================================================================================
+
+    //MEtodos de la Inerfaz
+
+
+
+    @Override
+    public void gestorReportes() {
+    }
+
+    @Override
+    public void configuracionTarifas() {
+
+    }
+
+
+
+    //=============================
+    //Patron Builder
 
     public static class Builder {
 
