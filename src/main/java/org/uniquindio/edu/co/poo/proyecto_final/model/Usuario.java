@@ -29,9 +29,6 @@ public class Usuario extends Persona {
         this.idUsuario = idUsuario;
     }
 
-
-
-
     public String getContraseña() {
         return contraseña;
     }

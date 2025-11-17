@@ -15,13 +15,11 @@
             <Font name="Candara" size="44.0" />
          </font>
       </Text>
-      <Button fx:id="Registrar" layoutX="197.0" layoutY="149.0" mnemonicParsing="false" onAction="#RegistrarUsuario" prefHeight="44.0" prefWidth="207.0" text="REGISTRARSE">
       <Button id="Registrar" layoutX="197.0" layoutY="149.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="207.0" text="REGISTRARSE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="Iniciar" layoutX="196.0" layoutY="230.0" mnemonicParsing="false" onAction="#IniciarSesionUsuario" prefHeight="44.0" prefWidth="207.0" text="INICIAR SESION">
       <Button id="Iniciar" layoutX="196.0" layoutY="230.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="207.0" text="INICIAR SESION">
          <font>
             <Font size="20.0" />
@@ -32,6 +30,5 @@
             <Image url="@../../../../../../Images/LogoEmpresa.png" />
          </image>
       </ImageView>
-      <Button fx:id="regresar" layoutX="263.0" layoutY="354.0" mnemonicParsing="false" text="REGRESAR" onAction="#regresarInicio"/>
    </children>
 </Pane>

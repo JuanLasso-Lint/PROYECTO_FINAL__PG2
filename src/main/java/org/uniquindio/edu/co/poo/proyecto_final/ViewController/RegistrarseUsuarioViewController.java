@@ -28,10 +28,10 @@ public class RegistrarseUsuarioViewController {
     @FXML
     private TextField idusuarioU;
 
-    Plataforma plataforma = Plataforma.getInstance();
+    Plataforma plataforma = new Plataforma();
 
     @FXML
-    private void registrarUsuario(ActionEvent event) throws IOException {
+    private void registrarUsuario() {
 
         Usuario usuario = plataforma.RegistrarUsuario(
                 nombreU.getText(),
@@ -41,13 +41,6 @@ public class RegistrarseUsuarioViewController {
                 idusuarioU.getText()
         );
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/ProcesoCorrecto.fxml"));
-        Scene scene = new Scene(loader.load());
-
-        Stage stage = (Stage) ((javafx.scene.control.Button) event.getSource()).getScene().getWindow();
-
-        stage.setScene(scene);
-        stage.show();
     }
 
     @FXML

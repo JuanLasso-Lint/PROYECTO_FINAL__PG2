@@ -8,32 +8,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity"
-      minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="108.0" prefWidth="398.0"
-      xmlns="http://javafx.com/javafx/25"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.ProcesoCorrectoViewController">
-
-    <children>
-        <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../../../../Images/Correcto.png" />
-            </image>
-        </ImageView>
-
-        <Text layoutX="73.0" layoutY="36.0" strokeType="OUTSIDE"
-              strokeWidth="0.0" text="PROCESO COMPLETADO CORRECTAMENTE">
-            <font>
-                <Font size="13.0" />
-            </font>
-        </Text>
-
-        <Separator layoutX="19.0" layoutY="56.0" prefHeight="1.0" prefWidth="363.0" />
-
-        <Button fx:id="regresar" layoutX="163.0" layoutY="69.0"
-                mnemonicParsing="false" text="REGRESAR"
-                onAction="#regresarInicio"/>
-    </children>
-
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Images/Correcto.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="73.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROCESO COMPLETADO CORRECTAMENTE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Separator layoutX="19.0" layoutY="56.0" prefHeight="1.0" prefWidth="363.0" />
+      <Button fx:id="regresar" layoutX="163.0" layoutY="69.0" mnemonicParsing="false" text="REGRESAR" />
+   </children>
 </Pane>
