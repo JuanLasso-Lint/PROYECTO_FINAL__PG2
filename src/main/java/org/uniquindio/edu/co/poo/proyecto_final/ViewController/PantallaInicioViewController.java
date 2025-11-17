@@ -15,6 +15,9 @@ public class PantallaInicioViewController {
     private void LogearUsuario(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesUsuario.fxml"));
+    private void AgendarConsulta(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org.uniquindio.edu.co.poo.proyecto_final/OpcionesUsuario.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();

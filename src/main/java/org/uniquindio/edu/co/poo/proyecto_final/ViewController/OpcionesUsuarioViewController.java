@@ -48,5 +48,8 @@ public class OpcionesUsuarioViewController {
         stage.show();
 
     }
+public class OpcionesUsuarioViewController {
+
+
 
 }

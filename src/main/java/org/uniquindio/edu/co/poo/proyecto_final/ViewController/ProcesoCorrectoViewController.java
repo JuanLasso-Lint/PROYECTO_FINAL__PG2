@@ -23,4 +23,5 @@ public class ProcesoCorrectoViewController {
 
     }
 
+public class ProcesoCorrectoViewController {
 }

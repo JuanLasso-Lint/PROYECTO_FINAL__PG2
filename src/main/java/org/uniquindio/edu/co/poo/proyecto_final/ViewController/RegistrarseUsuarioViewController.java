@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.uniquindio.edu.co.poo.proyecto_final.model.Plataforma;
+import org.uniquindio.edu.co.poo.proyecto_final.model.Usuario;
 
 import java.io.IOException;
 
@@ -33,6 +34,12 @@ public class RegistrarseUsuarioViewController {
     private void registrarUsuario(ActionEvent event) throws IOException {
 
         plataforma.RegistrarUsuario(
+    Plataforma plataforma = new Plataforma();
+
+    @FXML
+    private void registrarUsuario() {
+
+        Usuario usuario = plataforma.RegistrarUsuario(
                 nombreU.getText(),
                 idU.getText(),
                 telefonoU.getText(),
@@ -53,6 +60,7 @@ public class RegistrarseUsuarioViewController {
     private void regresarInicio(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesUsuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org.uniquindio.edu.co.poo.proyecto_final/PantallaInicio.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
