@@ -14,6 +14,7 @@
          <image>
             <Image url="@
             ../../../../../../Images/LogoEmpresa.png" />
+            <Image url="@../../../../../../Images/LogoEmpresa.png" />
          </image>
       </ImageView>
       <Text layoutX="103.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LLENE LOS CAMPOS REQUERIDOS">

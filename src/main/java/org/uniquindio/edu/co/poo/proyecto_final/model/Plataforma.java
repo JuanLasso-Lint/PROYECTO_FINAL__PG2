@@ -19,6 +19,8 @@ public class Plataforma {
         return instance;
     }
 
+    private ArrayList<Usuario> listaUsuarios;
+
     public Usuario RegistrarUsuario(String nombre, String identificacion, String telefono, String email, String idUsuario) {
 
         Usuario usuario = new Usuario(nombre, identificacion, telefono, email, idUsuario);

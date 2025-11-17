@@ -11,3 +11,8 @@ module org.uniquindio.edu.co.poo.proyecto_final {
     exports org.uniquindio.edu.co.poo.proyecto_final;
     exports org.uniquindio.edu.co.poo.proyecto_final.ViewController;
 }
+
+    exports org.uniquindio.edu.co.poo.proyecto_final;
+    exports org.uniquindio.edu.co.poo.proyecto_final.ViewController;
+
+}
