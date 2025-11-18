@@ -218,4 +218,8 @@ public class EnvioBuilder implements IEnvio {
         }
     }
 
+    @Override
+    public double CalcularCosto(Tarifa tarifa) {
+        return tarifa.CalculoTarifa();
+    }
 }

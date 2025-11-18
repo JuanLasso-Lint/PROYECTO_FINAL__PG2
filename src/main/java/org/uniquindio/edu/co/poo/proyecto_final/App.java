@@ -37,6 +37,10 @@ public class App extends Application {
         return fachada;
     }
 
+    public static Plataforma getPlataforma() {
+        return plataforma;
+    }
+
 
     public static void main(String[] args) {
         launch(args);

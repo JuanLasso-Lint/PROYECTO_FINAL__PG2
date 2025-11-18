@@ -20,6 +20,11 @@ public class Direccion {
         this.coordenadas = coordenadas;
     }
 
+    public void TodasListaDirecciones(Direccion direccion) {
+        listaDirecciones.add(direccion);
+    }
+
+    /**
     public static Direccion crearDireccion(String idDireccion, String alias, String calle, String ciudad, String coordenadas) {
         Direccion nueva = new Direccion(idDireccion);
         nueva.idDireccion = idDireccion;
@@ -63,7 +68,7 @@ public class Direccion {
         }
         System.out.println("No se encontró una dirección con ese ID.");
     }
-
+**/
 
 
 
