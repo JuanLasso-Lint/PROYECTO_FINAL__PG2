@@ -1,9 +1,13 @@
 package org.uniquindio.edu.co.poo.proyecto_final.model;
 
+import org.uniquindio.edu.co.poo.proyecto_final.model.Direccion;
+import org.uniquindio.edu.co.poo.proyecto_final.model.Observer;
+import org.uniquindio.edu.co.poo.proyecto_final.model.Persona;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Usuario extends Persona {
+public class Usuario extends Persona implements Observer {
 
     private String email;
     private String idUsuario;
@@ -53,6 +57,8 @@ public class Usuario extends Persona {
         direcciones.removeIf(d -> d.getIdDireccion().equals(idDireccion));
     }
 
-
-
+    @Override
+    public void actualizar(String mensaje) {
+        System.out.println("Notificación para " + getNombre() + ": " + mensaje);
+    }
 }

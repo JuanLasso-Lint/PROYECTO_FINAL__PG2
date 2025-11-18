@@ -26,7 +26,7 @@ public class ServicioDirecciones {
      */
     public boolean agregarDireccion(String idUsuario, Direccion direccion) {
 
-        Optional<Usuario> usuario = servicioUsuario.mostrarUsuario(idUsuario);
+        Optional<model.Usuario> usuario = servicioUsuario.mostrarUsuario(idUsuario);
         if (usuario.isEmpty()) {
             System.out.println("El usuario no existe");
             return false;
