@@ -26,30 +26,34 @@ public class ServicioDirecciones {
      */
     public boolean agregarDireccion(String idUsuario, Direccion direccion) {
 
-        Optional<Usuario> usuario = servicioUsuario.mostrarUsuario(idUsuario);
-        if (usuario.isEmpty()) {
+        Usuario usuario = servicioUsuario.mostrarUsuario(idUsuario);
+
+        if (usuario == null) {
             System.out.println("El usuario no existe");
             return false;
         }
 
-        usuario.get().agregarDireccion(direccion);
+        usuario.agregarDireccion(direccion);
+        direccion.TodasListaDirecciones(direccion);
         return true;
     }
+
 
     /**
      * Elimina una dirección de un usuario existente.
      */
     public boolean eliminarDireccion(String idUsuario, String idDireccion) {
 
-        Optional<Usuario> opt = servicioUsuario.mostrarUsuario(idUsuario);
-        if (opt.isEmpty()) {
+        Usuario usuario = servicioUsuario.buscarUsuario(idUsuario);
+
+        if (usuario == null) {
             return false;
         }
 
-        Usuario usuario = opt.get();
         usuario.eliminarDireccion(idDireccion);
         return true;
     }
+
 
 
 
@@ -59,13 +63,42 @@ public class ServicioDirecciones {
      */
     public List<Direccion> listarDirecciones(String idUsuario) {
 
-        Optional<Usuario> usuario = servicioUsuario.mostrarUsuario(idUsuario);
-        if (usuario.isEmpty()) {
+        Usuario usuario = servicioUsuario.buscarUsuario(idUsuario);
+
+        if (usuario == null) {
             System.out.println("El usuario no existe");
             return List.of();
         }
-        return usuario.get().getDirecciones();
+
+        return usuario.getDirecciones();
     }
+
+
+    public boolean editarDireccion(String idUsuario, Direccion nuevosDatos) {
+
+        Usuario usuario = servicioUsuario.buscarUsuario(idUsuario);
+
+        if (usuario == null) {
+            System.out.println("El usuario no existe");
+            return false;
+        }
+
+        for (Direccion d : usuario.getDirecciones()) {
+            if (d.getIdDireccion().equals(nuevosDatos.getIdDireccion())) {
+
+                d.setAlias(nuevosDatos.getAlias());
+                d.setCalle(nuevosDatos.getCalle());
+                d.setCiudad(nuevosDatos.getCiudad());
+                d.setCordenadas(nuevosDatos.getCordenadas());
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 
     //s
 }

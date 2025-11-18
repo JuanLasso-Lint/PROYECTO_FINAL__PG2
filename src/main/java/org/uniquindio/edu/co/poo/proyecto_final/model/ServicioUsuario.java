@@ -13,62 +13,69 @@ public class ServicioUsuario {
 
 
     //Mtodo interno de buscar
-    private Optional<Usuario> buscarUsuario(String idUsuario) {
-        return listaDeUsuarios
-                .stream()
-                .filter(u -> u.getIdUsuario().equals(idUsuario))
-                .findFirst();
+    public Usuario buscarUsuario(String idUsuario) {
+        for (Usuario u : listaDeUsuarios) {
+            if (u.getIdUsuario().equals(idUsuario)) {
+                return u;
+            }
+        }
+        return null;
     }
+
 
 
     // CRUD
 
 
     // Registrar usuario
-    public Optional<Usuario> registrarUsuario(Usuario usuario) {
+    public Usuario registrarUsuario(Usuario usuario) {
 
-        Optional<Usuario> existente = buscarUsuario(usuario.getIdUsuario());
+        Usuario existente = buscarUsuario(usuario.getIdUsuario());
 
-        if (existente.isPresent()) {
+        if (existente != null) {
             System.out.println("El usuario ya existe");
-            return Optional.empty(); // NO se registró
+            return null;
         }
 
         listaDeUsuarios.add(usuario);
         System.out.println("Usuario registrado correctamente");
 
-        return Optional.of(usuario);
+        return usuario;
     }
-    // Editar email (puedes agregar más parámetros según el caso)
+
+    //Editar Usuario
     public String editarUsuario(String idUsuario, String nuevoEmail) {
 
-        Optional<Usuario> optionalUsuario = buscarUsuario(idUsuario);
+        Usuario usuario = buscarUsuario(idUsuario);
 
-        if (optionalUsuario.isEmpty()) {
+        if (usuario == null) {
             return "El usuario no existe.";
         }
 
-        Usuario usuario = optionalUsuario.get();
         usuario.setEmail(nuevoEmail);
-
         return "Usuario actualizado correctamente.";
     }
-    // Eliminar usuario
+
+    //Eliminar Usuario
     public String eliminarUsuario(String idUsuario) {
 
-        Optional<Usuario> optionalUsuario = buscarUsuario(idUsuario);
+        Usuario usuario = buscarUsuario(idUsuario);
 
-        if (optionalUsuario.isEmpty()) {
+        if (usuario == null) {
             return "El usuario no existe.";
         }
 
-        listaDeUsuarios.remove(optionalUsuario.get());
+        listaDeUsuarios.remove(usuario);
         return "Usuario eliminado correctamente.";
     }
-    // Mostrar un Usuario
-    public Optional<Usuario> mostrarUsuario(String idUsuario) {
+
+    //Mostrar Usuario
+    public Usuario mostrarUsuario(String idUsuario) {
         return buscarUsuario(idUsuario);
     }
+
+
+
     // Listar usuarios
     public List<Usuario> getListarUsuarios() {
         return listaDeUsuarios;

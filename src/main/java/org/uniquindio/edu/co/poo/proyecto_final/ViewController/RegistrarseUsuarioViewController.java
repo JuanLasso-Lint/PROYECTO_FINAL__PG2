@@ -48,7 +48,7 @@ public class RegistrarseUsuarioViewController {
                 idusuarioU.getText()
         );
 
-        boolean registro = plataformaFacade.registrarUsuario(usuario);
+        Usuario registro = plataformaFacade.registrarUsuario(usuario);
 
         System.out.println(plataformas.getListaUsuarios());
 
