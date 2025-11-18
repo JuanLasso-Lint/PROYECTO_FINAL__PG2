@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <center>
+        <VBox alignment="CENTER" spacing="14" padding="20">
+
+            <Label text="Cálculo de Tarifa"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+            <!-- Tipo de Tarifa -->
+            <HBox spacing="10">
+                <Label text="Tipo de tarifa:" />
+                <ComboBox fx:id="cbTipoTarifa" prefWidth="180" />
+            </HBox>
+
+            <!-- Peso -->
+            <HBox spacing="10">
+                <Label text="Peso (kg):" />
+                <TextField fx:id="txtPeso" prefWidth="180" />
+            </HBox>
+
+            <!-- Volumen -->
+            <HBox spacing="10">
+                <Label text="Volumen (m³):" />
+                <TextField fx:id="txtVolumen" prefWidth="180" />
+            </HBox>
+
+            <!-- Prioridad -->
+            <HBox spacing="10">
+                <Label text="Prioridad:" />
+                <ComboBox fx:id="cbPrioridad" prefWidth="180" />
+            </HBox>
+
+            <!-- Distancia -->
+            <HBox spacing="10">
+                <Label text="Distancia:" />
+                <ComboBox fx:id="cbDistancia" prefWidth="180" />
+            </HBox>
+
+            <!-- Recargo adicional -->
+            <HBox spacing="10">
+                <Label text="Recargo ($):" />
+                <TextField fx:id="txtRecargo" prefWidth="180" />
+            </HBox>
+
+            <!-- Botón de cálculo -->
+            <Button fx:id="btnCalcular"
+                    text="Calcular Tarifa"
+                    prefWidth="160" />
+
+            <!-- Resultado -->
+            <Label fx:id="lblResultado"
+                   text=""
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+        </VBox>
+    </center>
+
+</BorderPane>
