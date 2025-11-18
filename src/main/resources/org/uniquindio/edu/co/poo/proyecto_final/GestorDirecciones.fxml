@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="440.0" prefWidth="740.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.GestorDirecciones">
+   <children>
+      <Text layoutX="130.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Por favor introduzca los siguientes datos:" textAlignment="CENTER" wrappingWidth="479.033203125">
+         <font>
+            <Font name="Candara" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="38.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de Usuario" />
+      <TextField fx:id="txtCedulaUsuario" layoutX="134.0" layoutY="67.0" style="-fx-border-color: black;" />
+      <Text layoutX="300.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Necesario para agregar la dirieccion al usuario" />
+      <GridPane alignment="CENTER" layoutX="14.0" layoutY="137.0" prefHeight="108.0" prefWidth="711.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="29.60001220703125" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="93.59998779296873" minHeight="8.799993896484374" prefHeight="29.600003051757803" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="87.99999694824217" minHeight="10.0" prefHeight="15.999954223632827" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="150.00003967285156" minHeight="10.0" prefHeight="24.000000000000007" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="146.79998779296875" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="INSIDE" strokeWidth="0.0" text="ID Direccion" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ciudad" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calle" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Alias" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coordenadas" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="txtIdDireccion" style="-fx-border-color: black;" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <TextField fx:id="txtCiudad" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <TextField fx:id="txtCalle" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <TextField fx:id="txtAlias" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="txtCoordenadas" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="29.0" layoutY="388.0" prefHeight="30.0" prefWidth="682.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnRegistro" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Registrar" prefHeight="25.0" prefWidth="97.0" style="-fx-border-color: black; -fx-border-radius: 5;" text="Registrar" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button fx:id="btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Editar" prefHeight="25.0" prefWidth="97.0" style="-fx-border-color: black; -fx-border-radius: 5;" text="Editar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button fx:id="btnElimir" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#eliminar" prefHeight="25.0" prefWidth="97.0" style="-fx-border-color: black; -fx-border-radius: 5;" text="Eliminar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button fx:id="btnmostrar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#mostrarDireccionesUsuario" prefHeight="26.0" prefWidth="143.0" style="-fx-border-color: black; -fx-border-radius: 5;" text="Mostrar Direcciones" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tablaDirecciones" layoutX="38.0" layoutY="268.0" prefHeight="126.0" prefWidth="594.0" style=" -fx-background-color: white; -fx-text-fill: black;">
+        <columns>
+          <TableColumn fx:id="tablaIdDirecccion" prefWidth="75.0" text="ID Direccion" />
+          <TableColumn fx:id="tablaCiudad" prefWidth="75.0" text="Ciudad" />
+            <TableColumn fx:id="tablaCalle" prefWidth="75.0" text="Calle" />
+            <TableColumn fx:id="TablaCoorde" prefWidth="127.20001220703125" text="Coordenadas" />
+            <TableColumn fx:id="tablaAlias" minWidth="0.0" prefWidth="175.9999938964844" text="Alias" />
+        </columns>
+      </TableView>
+      <Separator layoutY="101.0" prefHeight="1.0" prefWidth="740.0" style="-fx-background-color: black;" />
+   </children>
+</AnchorPane>

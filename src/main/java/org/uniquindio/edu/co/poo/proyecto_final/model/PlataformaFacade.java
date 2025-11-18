@@ -39,9 +39,12 @@ public class PlataformaFacade {
     // ======================================================
     // USUARIOS
     // ======================================================
+    public Usuario buscarUsuario(String cedula) {
+        return servicioUsuario.buscarUsuario(cedula);
+    }
 
-    public boolean registrarUsuario(Usuario usuario) {
-        return servicioUsuario.registrarUsuario(usuario).isEmpty();
+    public Usuario registrarUsuario(Usuario usuario) {
+        return servicioUsuario.registrarUsuario(usuario);
     }
 
     public String editarUsuario(String idUsuario, String nuevoEmail) {
@@ -52,7 +55,7 @@ public class PlataformaFacade {
         return servicioUsuario.eliminarUsuario(idUsuario);
     }
 
-    public Optional<Usuario> mostrarUsuario(String idUsuario) {
+    public Usuario mostrarUsuario(String idUsuario) {
         return servicioUsuario.mostrarUsuario(idUsuario);
     }
 
@@ -78,6 +81,10 @@ public class PlataformaFacade {
 
     public List<Direccion> listarDirecciones(String idUsuario) {
         return servicioDireccion.listarDirecciones(idUsuario);
+    }
+
+    public boolean editarDireccion(String idUsuario, Direccion direccion) {
+        return servicioDireccion.editarDireccion(idUsuario, direccion);
     }
 
     // ======================================================

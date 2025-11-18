@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.PaginaUsuarioViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.PaginaUsuarioViewController">
     <children>
         <ImageView fitHeight="108.0" fitWidth="112.0" layoutX="488.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -21,7 +21,7 @@
         </Text>
         <Button fx:id="gestion" layoutX="60.0" layoutY="105.0" mnemonicParsing="false" onAction="#GestionCliente" text="GESTIONAR MIS DATOS" />
         <Button fx:id="regresar" layoutX="264.0" layoutY="341.0" mnemonicParsing="false" onAction="#regresarInicio" text="REGRESAR" />
-      <Button fx:id="cotizar" layoutX="61.0" layoutY="153.0" mnemonicParsing="false" onAction="#CotizarTarifa" prefHeight="25.0" prefWidth="144.0" text="COTIZAR TARIFA" />
+      <Button fx:id="cotizar" layoutX="60.0" layoutY="164.0" mnemonicParsing="false" onAction="#CotizarTarifa" prefHeight="25.0" prefWidth="144.0" text="COTIZAR TARIFA" />
       <Button fx:id="envioM" layoutX="62.0" layoutY="200.0" mnemonicParsing="false" onAction="#MenuEnvio" prefHeight="25.0" prefWidth="144.0" text="MENU ENVIOS" />
       <Button fx:id="consultarE" layoutX="62.0" layoutY="247.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="CONSULTAR ENVIO" />
       <Button fx:id="descargarE" layoutX="60.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="DESCARGAR REPORTE" />
@@ -30,5 +30,6 @@
             <Image url="@../../../../../../Images/Domiciliario.png" />
          </image>
       </ImageView>
+      <Button fx:id="gestiondIRECCIONES" layoutX="60.0" layoutY="136.0" mnemonicParsing="false" onAction="#GestiondIRECCION" text="GESTIONAR MIS DIRECCIONES" />
     </children>
 </Pane>
