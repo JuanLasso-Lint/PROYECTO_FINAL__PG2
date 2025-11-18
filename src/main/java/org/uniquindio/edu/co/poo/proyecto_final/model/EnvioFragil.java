@@ -7,4 +7,10 @@ public class EnvioFragil extends EnvioDecorador {
         super(envio);
     }
 
+    @Override
+    public double CalcularCosto(Tarifa tarifa) {
+        double base = envio.CalcularCosto(tarifa);
+        return base + 5000;
+    }
+
 }

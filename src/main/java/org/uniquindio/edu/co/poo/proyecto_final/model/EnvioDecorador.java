@@ -8,13 +8,14 @@ public class EnvioDecorador implements IEnvio{
         this.envio = envio;
     }
 
-
-
     @Override
-    public void gestorReportes() {
+    public double CalcularCosto(Tarifa tarifa) {
+        return envio.CalcularCosto(tarifa);
     }
 
     @Override
-    public void configuracionTarifas() {
-    }
+    public void gestorReportes() {}
+
+    @Override
+    public void configuracionTarifas() {}
 }

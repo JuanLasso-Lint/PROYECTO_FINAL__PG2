@@ -213,4 +213,15 @@ public class EnvioBuilder implements IEnvio {
             return new EnvioBuilder(this);
         }
     }
+
+    @Override
+    public double CalcularCosto(Tarifa tarifa) {
+        return tarifa.CalculoTarifa(
+                tarifa.getPeso(),
+                tarifa.getVolumen(),
+                tarifa.getPrioridad(),
+                tarifa.getRecargoAdicional(),
+                tarifa.getDistancia()
+        );
+    }
 }

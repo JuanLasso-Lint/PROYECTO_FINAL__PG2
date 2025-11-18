@@ -42,6 +42,12 @@ public class ServicioEnvio {
     // CRUD DE ENVIOS
     // =========================================================
 
+    protected Tarifa tarifa;
+
+    public void CrearEnvio (Tarifa tarifa) {
+
+    }
+
     public Optional<EnvioBuilder> registrarEnvio(EnvioBuilder envio) {
         Optional<EnvioBuilder> opt = buscarEnvio(envio.getIdEnvio());
 
