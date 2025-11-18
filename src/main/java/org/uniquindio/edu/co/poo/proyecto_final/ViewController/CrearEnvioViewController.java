@@ -20,7 +20,6 @@ public class CrearEnvioViewController {
 
     @FXML private ComboBox<Direccion> SeleccionDirecciones;
     @FXML private ComboBox<TipoDistancia> distanciaE;
-    @FXML private ComboBox<TipoPrioridad> prioridadE;
     @FXML private ComboBox<String> servicioA;
 
     @FXML private TextField txtcedulaUsuario;
@@ -30,9 +29,7 @@ public class CrearEnvioViewController {
     @FXML private TextField pesoE;
     @FXML private TextField volumenE;
 
-    @FXML private ComboBox<TipoDistancia> distanciaE;
     @FXML private ComboBox<TipoPrioridad> prioridadE;
-    @FXML private ComboBox<String> servicioA;
 
 
     private final PlataformaFacade fachada = App.getFachada();
@@ -44,8 +41,8 @@ public class CrearEnvioViewController {
 
         servicioA.getItems().addAll("NINGUNO", "FRAGIL", "PRIORIDAD", "SEGURO");
     }
+/**
 
-    @FXML
     public void crearEnvio(ActionEvent event) throws IOException {
 
         try {
@@ -97,7 +94,7 @@ public class CrearEnvioViewController {
         List<Direccion> direcciones = usuario.getDirecciones();
         SeleccionDirecciones.getItems().setAll(direcciones);
     }
-
+    **/
     @FXML
     void crearEnvio(ActionEvent event) throws IOException {
 

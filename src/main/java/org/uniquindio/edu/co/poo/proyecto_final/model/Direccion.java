@@ -12,7 +12,7 @@ public class Direccion {
     private static ArrayList<Direccion> listaDirecciones = new ArrayList<>();
 
 
-    public Direccion(String idDireccion) {
+    public Direccion(String idDireccion,  String alias, String calle, String ciudad, String coordenadas) {
         this.idDireccion = idDireccion;
         this.alias = alias;
         this.calle = calle;

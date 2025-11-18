@@ -148,7 +148,7 @@ public class GestorDirecciones {
             return;
         }
 
-        boolean ok = fachada.eliminarDireccion(dir.getIdDireccion(), usuarioActual.getIdUsuario());
+        boolean ok = fachada.eliminarDireccion(usuarioActual.getIdUsuario(),dir.getIdDireccion());
 
         if (ok) {
             modeloTabla.remove(dir);

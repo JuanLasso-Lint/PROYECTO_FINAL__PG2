@@ -8,6 +8,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.uniquindio.edu.co.poo.proyecto_final.model.EstrategiaTarifaCompleta;
 import org.uniquindio.edu.co.poo.proyecto_final.model.Tarifa;
 import org.uniquindio.edu.co.poo.proyecto_final.model.TipoDistancia;
 import org.uniquindio.edu.co.poo.proyecto_final.model.TipoPrioridad;
@@ -40,7 +41,7 @@ public class CotizarTarifaViewController {
         distanciaT.getItems().addAll(TipoDistancia.values());
         prioridadT.getItems().addAll(TipoPrioridad.values());
     }
-
+/**
     @FXML
     public void CalcularCosto(ActionEvent event){
 
@@ -58,6 +59,45 @@ public class CotizarTarifaViewController {
         costo.setText("Costo: " );
 
     }
+ **/
+
+@FXML
+public void CalcularCosto(ActionEvent event) {
+    try {
+        // Conversión de texto a double
+        double peso = Double.parseDouble(pesoT.getText());
+        double volumen = Double.parseDouble(volumenT.getText());
+        double recargo = Double.parseDouble(recargoT.getText());
+
+        TipoDistancia distanciaSeleccionada = distanciaT.getValue();
+        TipoPrioridad prioridadSeleccionada = prioridadT.getValue();
+
+        if (distanciaSeleccionada == null || prioridadSeleccionada == null) {
+            costo.setText("Error: Selecciona distancia y prioridad");
+            return;
+        }
+
+        // ✅ Crear tarifa con estrategia
+        Tarifa tarifa = new Tarifa(peso, volumen, prioridadSeleccionada, recargo, distanciaSeleccionada);
+
+        // ✅ Asignar estrategia (puedes cambiarla según necesites)
+        tarifa.setEstrategia(new EstrategiaTarifaCompleta());
+
+        // ✅ Calcular costo
+        double costoTotal = tarifa.CalculoTarifa();
+
+        costo.setText("Costo: $" + String.format("%.2f", costoTotal));
+
+    } catch (NumberFormatException e) {
+        costo.setText("Error: Ingresa valores numéricos válidos");
+    } catch (Exception e) {
+        costo.setText("Error: " + e.getMessage());
+    }
+}
+
+
+
+
 
     @FXML
     private void regresarInicio(ActionEvent event) throws IOException {

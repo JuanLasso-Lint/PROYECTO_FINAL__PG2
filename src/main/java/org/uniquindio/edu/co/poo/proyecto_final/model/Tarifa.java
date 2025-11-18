@@ -48,6 +48,10 @@ public class Tarifa {
     }
 
     public double CalculoTarifa() {
+        if (estrategia == null) {
+            throw new NullPointerException("estrategia es null");
+        }
         return estrategia.calcular(this);
     }
+
 }
