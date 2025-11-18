@@ -23,7 +23,7 @@ public class CrearEnvioViewController {
     @FXML private TextField volumenE;
 
     @FXML private ComboBox<TipoDistancia> distanciaE;
-    @FXML private ComboBox<TipoProridad> prioridadE;
+    @FXML private ComboBox<TipoPrioridad> prioridadE;
     @FXML private ComboBox<String> servicioA;
 
 
@@ -31,7 +31,7 @@ public class CrearEnvioViewController {
     @FXML
     public void initialize() {
         distanciaE.getItems().addAll(TipoDistancia.values());
-        prioridadE.getItems().addAll(TipoProridad.values());
+        prioridadE.getItems().addAll(TipoPrioridad.values());
 
         servicioA.getItems().addAll("NINGUNO", "FRAGIL", "PRIORIDAD", "SEGURO");
     }
@@ -47,7 +47,7 @@ public class CrearEnvioViewController {
             double volumen = Double.parseDouble(volumenE.getText());
 
             TipoDistancia distancia = distanciaE.getValue();
-            TipoProridad prioridad = prioridadE.getValue();
+            TipoPrioridad prioridad = prioridadE.getValue();
             String adicional = servicioA.getValue();
 
             Tarifa tarifa = new Tarifa(
