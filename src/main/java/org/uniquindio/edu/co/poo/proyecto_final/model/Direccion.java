@@ -1,6 +1,5 @@
 package org.uniquindio.edu.co.poo.proyecto_final.model;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Direccion {
@@ -13,7 +12,7 @@ public class Direccion {
     private static ArrayList<Direccion> listaDirecciones = new ArrayList<>();
 
 
-    public Direccion(String idDireccion, String alias, String calle, String ciudad, String coordenadas) {
+    public Direccion(String idDireccion) {
         this.idDireccion = idDireccion;
         this.alias = alias;
         this.calle = calle;
@@ -22,7 +21,7 @@ public class Direccion {
     }
 
     public static Direccion crearDireccion(String idDireccion, String alias, String calle, String ciudad, String coordenadas) {
-        Direccion nueva = new Direccion(idDireccion, alias, calle, ciudad, coordenadas);
+        Direccion nueva = new Direccion(idDireccion);
         nueva.idDireccion = idDireccion;
         nueva.alias = alias;
         nueva.calle = calle;

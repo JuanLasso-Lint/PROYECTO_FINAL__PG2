@@ -37,9 +37,9 @@ public class PaginaUsuarioViewController {
     }
 
     @FXML
-    private void CotizarTarifa(ActionEvent event) throws IOException {
+    private void Tarifa(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/CotizarTarifa.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/TarifaView.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
