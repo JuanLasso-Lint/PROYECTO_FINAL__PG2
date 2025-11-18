@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -21,6 +22,7 @@ public class CrearEnvioViewController {
     @FXML private ComboBox<Direccion> SeleccionDirecciones;
     @FXML private ComboBox<TipoDistancia> distanciaE;
     @FXML private ComboBox<String> servicioA;
+    @FXML private Button btnCargarDirecciones;
 
     @FXML private TextField txtcedulaUsuario;
     @FXML private TextField idE;
@@ -32,7 +34,28 @@ public class CrearEnvioViewController {
     @FXML private ComboBox<TipoPrioridad> prioridadE;
 
 
+
     private final PlataformaFacade fachada = App.getFachada();
+
+    @FXML
+    void CargarDireccionesUsuario(ActionEvent event) {
+        String cedula = txtcedulaUsuario.getText();
+
+        if (cedula.isEmpty()) {
+            System.out.println("Debes escribir la cédula");
+            return;
+        }
+
+        List<Direccion> direcciones = fachada.listarDirecciones(cedula);
+
+        if (direcciones == null || direcciones.isEmpty()) {
+            System.out.println("Usuario sin direcciones");
+            SeleccionDirecciones.getItems().clear();
+            return;
+        }
+
+        SeleccionDirecciones.getItems().setAll(direcciones);
+    }
 
     @FXML
     public void initialize() {
@@ -95,6 +118,28 @@ public class CrearEnvioViewController {
         SeleccionDirecciones.getItems().setAll(direcciones);
     }
     **/
+
+@FXML
+void seleccionDirecciones (ActionEvent event) {
+    String cedula = txtcedulaUsuario.getText();
+    Usuario usuario = fachada.buscarUsuario(cedula);
+
+    if (usuario == null) {
+        System.out.println("Usuario no existe");
+        return;
+    }
+
+    List<Direccion> direcciones = usuario.getDirecciones();
+    SeleccionDirecciones.getItems().setAll(direcciones);
+}
+
+
+
+
+
+
+
+
     @FXML
     void crearEnvio(ActionEvent event) throws IOException {
 
@@ -153,6 +198,7 @@ public class CrearEnvioViewController {
         Stage stage = (Stage) idE.getScene().getWindow();
         stage.setScene(scene);
     }
+    
 
     @FXML
     void regresarInicio(ActionEvent event) throws IOException {
@@ -163,4 +209,9 @@ public class CrearEnvioViewController {
         Stage stage = (Stage) idE.getScene().getWindow();
         stage.setScene(scene);
     }
+
+
+
+
+
 }
