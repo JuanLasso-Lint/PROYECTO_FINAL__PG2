@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.CrearEnvioViewController" >
+   <children>
+      <TextField id="idenvio" layoutX="32.0" layoutY="120.0" />
+      <Text layoutX="32.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Por favor introduzca los siguientes datos:" textAlignment="CENTER" wrappingWidth="479.033203125">
+         <font>
+            <Font name="Candara" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID ENVIO:" />
+      <ImageView fitHeight="108.0" fitWidth="112.0" layoutX="498.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Images/LogoEmpresa.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="fechaE" layoutX="32.0" layoutY="180.0" />
+      <Text layoutX="32.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FECHA:" />
+      <TextField fx:id="idE" layoutX="32.0" layoutY="247.0" />
+      <Text layoutX="32.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IDENTIFICACION:" />
+      <TextField fx:id="horaE" layoutX="32.0" layoutY="318.0" />
+      <Text layoutX="32.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HORA:" />
+      <TextField fx:id="direccionE" layoutX="208.0" layoutY="120.0" />
+      <Text layoutX="208.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DIRECCION:" />
+      <TextField fx:id="pesoE" layoutX="208.0" layoutY="180.0" />
+      <Text layoutX="208.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESO:" />
+      <TextField fx:id="volumenE" layoutX="208.0" layoutY="247.0" />
+      <Text layoutX="208.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VOLUMEN:" />
+      <Text layoutX="208.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DISTANCIA:" />
+      <Text layoutX="384.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRIORIDAD:" />
+      <ComboBox fx:id="prioridadE" layoutX="384.0" layoutY="120.0" prefWidth="150.0" />
+      <ComboBox fx:id="distanciaE" layoutX="208.0" layoutY="318.0" prefWidth="150.0" />
+      <Text layoutX="384.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICIO ADICIONAL:" />
+      <ComboBox fx:id="servicioA" layoutX="384.0" layoutY="180.0" prefWidth="150.0" />
+      <Button fx:id="aceptar" layoutX="318.0" layoutY="364.0" mnemonicParsing="false" text="ACEPTAR" onAction="#crearEnvio"/>
+      <Button fx:id="regresar" layoutX="230.0" layoutY="364.0" mnemonicParsing="false" text="REGRESAR" onAction="#regresarInicio"/>
+   </children>
 </AnchorPane>

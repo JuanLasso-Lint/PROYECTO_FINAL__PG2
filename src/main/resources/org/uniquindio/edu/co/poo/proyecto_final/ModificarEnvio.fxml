@@ -12,6 +12,6 @@
             <Image url="@../../../../../../Images/LogoEmpresa.png" />
          </image>
       </ImageView>
-      <Button fx:id="aceptar" layoutX="195.0" layoutY="308.0" mnemonicParsing="false" text="Button" onAction="#regresarInicio"/>
+      <Button fx:id="regresar" layoutX="204.0" layoutY="354.0" mnemonicParsing="false" onAction="#regresarInicio" text="REGRESAR" />
    </children>
 </Pane>
