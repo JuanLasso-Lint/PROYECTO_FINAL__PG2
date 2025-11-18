@@ -43,7 +43,8 @@
       <ComboBox fx:id="servicioA" layoutX="384.0" layoutY="180.0" prefWidth="150.0" />
       <Button fx:id="aceptar" layoutX="318.0" layoutY="364.0" mnemonicParsing="false" onAction="#crearEnvio" text="ACEPTAR" />
       <Button fx:id="regresar" layoutX="230.0" layoutY="364.0" mnemonicParsing="false" onAction="#regresarInicio" text="REGRESAR" />
-      <Text layoutX="384.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#IDENTIFICACION USUARIO" />
-      <ComboBox fx:id="SeleccionDirecciones" layoutX="384.0" layoutY="251.0" onAction="#SelcDirecciones" prefWidth="150.0" />
+      <Text layoutX="384.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccion Direccion" />
+      <ComboBox fx:id="SeleccionDirecciones" layoutX="384.0" layoutY="251.0" onAction="#seleccionDirecciones" prefWidth="150.0" />
+      <Button fx:id="btnCargarDirecciones" layoutX="516.0" layoutY="292.0" mnemonicParsing="false" onAction="#CargarDireccionesUsuario" text="Button" />
    </children>
 </AnchorPane>

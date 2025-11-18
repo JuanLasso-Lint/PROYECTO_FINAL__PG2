@@ -111,4 +111,16 @@ public class Direccion {
     public void setCordenadas(String cordenadas) {
         this.coordenadas = coordenadas;
     }
+
+
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "idDireccion='" + idDireccion + '\'' +
+                ", alias='" + alias + '\'' +
+                ", calle='" + calle + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", coordenadas='" + coordenadas + '\'' +
+                '}';
+    }
 }
