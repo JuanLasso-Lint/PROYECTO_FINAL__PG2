@@ -4,6 +4,7 @@ module org.uniquindio.edu.co.poo.proyecto_final {
     requires java.desktop;
     requires javafx.graphics;
     requires javafx.base;
+    requires itextpdf;
 
     opens org.uniquindio.edu.co.poo.proyecto_final to javafx.fxml;
     opens org.uniquindio.edu.co.poo.proyecto_final.ViewController to javafx.fxml;

@@ -17,6 +17,7 @@ public class EnvioBuilder implements IEnvio  {
     private Usuario usuario;
     private Direccion direccion;
     private Tarifa tarifa;
+    
 
     private EnvioBuilder(Builder builder) {
         this.idEnvio = builder.idEnvio;

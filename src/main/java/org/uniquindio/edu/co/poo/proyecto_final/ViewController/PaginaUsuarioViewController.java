@@ -76,8 +76,32 @@ public class PaginaUsuarioViewController {
 
     }
 
+    @FXML
+    private void BuscarEnvio(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/ConsultarEnvio.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
 
+    @FXML
+    private void GenerarReporte(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/ReportePDF.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
 
 }

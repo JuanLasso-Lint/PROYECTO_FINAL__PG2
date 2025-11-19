@@ -94,76 +94,8 @@ public class CrearEnvioViewController {
                 return;
             }
 
-            // Obtener datos del formulario
-            String idEnvio = idE.getText().trim();
-            String cedula = txtcedulaUsuario.getText().trim();
-
-            // Buscar usuario
-            Usuario usuario = fachada.buscarUsuario(cedula);
-            if (usuario == null) {
-                mostrarAlerta("Error", "El usuario no existe", Alert.AlertType.ERROR);
-                return;
-            }
-
-            // Obtener dirección seleccionada
-            Direccion direccion = SeleccionDirecciones.getValue();
-            if (direccion == null) {
-                mostrarAlerta("Error", "Debes seleccionar una dirección", Alert.AlertType.WARNING);
-                return;
-            }
-
-            // Parsear valores numéricos
-            double peso = Double.parseDouble(pesoE.getText().trim());
-            double volumen = Double.parseDouble(volumenE.getText().trim());
-
-            // Validar valores positivos
-            if (peso <= 0 || volumen <= 0) {
-                mostrarAlerta("Error", "El peso y volumen deben ser mayores a 0", Alert.AlertType.WARNING);
-                return;
-            }
-
-            // Obtener valores de ComboBoxes
-            TipoDistancia tipoD = distanciaE.getValue();
-            TipoPrioridad tipoP = prioridadE.getValue();
-            String adicional = servicioA.getValue();
-
-            if (tipoD == null || tipoP == null) {
-                mostrarAlerta("Error", "Debes seleccionar distancia y prioridad", Alert.AlertType.WARNING);
-                return;
-            }
-
-            // Crear tarifa
-            Tarifa tarifa = new Tarifa(peso, volumen, tipoP, 0, tipoD);
-
-            // Crear envío base usando Builder
-            EnvioBuilder envioBase = new EnvioBuilder.Builder(
-                    idEnvio,
-                    "CREADO",
-                    LocalDate.now(),
-                    direccion,
-                    tarifa
-            ).usuario(usuario).build();
-
-            // Aplicar decoradores según servicio adicional
-            IEnvio envioFinal = envioBase;
-
-            if (adicional != null && !adicional.equals("NINGUNO")) {
-                switch (adicional) {
-                    case "FRAGIL" -> envioFinal = new EnvioFragil(envioFinal);
-                    case "PRIORIDAD" -> envioFinal = new EnvioPrioridad(envioFinal);
-                    case "SEGURO" -> envioFinal = new EnvioSeguro(envioFinal);
-                }
-            }
-
-            // Registrar envío en el sistema
-            fachada.registrarEnvio(envioBase);
-            System.out.println(App.getPlataforma().getListaEnvios());
-
-            // Mostrar mensaje de éxito
-            mostrarAlerta("Éxito", "Envío creado correctamente con ID: " + idEnvio, Alert.AlertType.INFORMATION);
-
-            // Redirigir a página de confirmación
-            navegarAPagina("/org/uniquindio/edu/co/poo/proyecto_final/ProcesoCorrecto.fxml");
+        servicioA.getItems().addAll("NINGUNO", "FRAGIL", "PRIORIDAD", "SEGURO");
+    }
 
         } catch (NumberFormatException e) {
             mostrarAlerta("Error", "Peso y volumen deben ser números válidos", Alert.AlertType.ERROR);
@@ -174,6 +106,10 @@ public class CrearEnvioViewController {
             System.out.println(App.getPlataforma().getListaEnvios());
         }
     }
+
+    List<Direccion> direcciones = usuario.getDirecciones();
+    SeleccionDirecciones.getItems().setAll(direcciones);
+}
 
     @FXML
     void regresarInicio(ActionEvent event) {
