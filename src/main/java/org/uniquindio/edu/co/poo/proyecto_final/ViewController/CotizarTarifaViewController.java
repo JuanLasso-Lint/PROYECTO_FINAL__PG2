@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.uniquindio.edu.co.poo.proyecto_final.model.Tarifa;
 import org.uniquindio.edu.co.poo.proyecto_final.model.TipoDistancia;
-import org.uniquindio.edu.co.poo.proyecto_final.model.TipoProridad;
+import org.uniquindio.edu.co.poo.proyecto_final.model.TipoPrioridad;
 
 import java.awt.*;
 import java.io.IOException;
@@ -33,12 +33,12 @@ public class CotizarTarifaViewController {
     private ComboBox<TipoDistancia> distanciaT;
 
     @FXML
-    private ComboBox<TipoProridad> prioridadT;
+    private ComboBox<TipoPrioridad> prioridadT;
 
     @FXML
     public void initialize() {
         distanciaT.getItems().addAll(TipoDistancia.values());
-        prioridadT.getItems().addAll(TipoProridad.values());
+        prioridadT.getItems().addAll(TipoPrioridad.values());
     }
 
     @FXML
@@ -51,13 +51,11 @@ public class CotizarTarifaViewController {
         double recargo = Double.parseDouble(recargoT.getText());
 
         TipoDistancia distanciaSeleccionada = distanciaT.getValue();
-        TipoProridad prioridadSeleccionada = prioridadT.getValue();
+        TipoPrioridad prioridadSeleccionada = prioridadT.getValue();
 
         Tarifa tarifa = new Tarifa(peso, volumen, prioridadSeleccionada, (int) recargo, distanciaSeleccionada);
 
-        double precio = tarifa.CalculoTarifa(peso, volumen, prioridadSeleccionada, recargo, distanciaSeleccionada);
-
-        costo.setText("Costo: " + precio);
+        costo.setText("Costo: " );
 
     }
 
