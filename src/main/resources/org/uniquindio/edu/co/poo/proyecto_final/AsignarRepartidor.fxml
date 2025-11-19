@@ -1,14 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.AsignarRepartidorViewController">
+   <children>
+      <Text fontSmoothingType="LCD" layoutX="158.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ASIGNAR ENVIO A REPARTIDOR" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Black Italic" size="20.0" />
+         </font>
+      </Text>
+      <GridPane layoutX="131.0" layoutY="59.0" prefHeight="278.0" prefWidth="338.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione su envio" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="comboxEnvio" onAction="#seleccionEnvio" prefWidth="150.0" style="-fx-border-color: black;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione Repartidor" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="ComboxRepartidor" onAction="#SeleccionRepartidor" prefWidth="150.0" style="-fx-border-color: black;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Estado de Envio" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtEstadoEnvio" style="-fx-border-color: black;" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+         </children>
+      </GridPane>
+      <Button alignment="CENTER" layoutX="245.0" layoutY="337.0" mnemonicParsing="false" onAction="#asignarEnvio" prefHeight="38.0" prefWidth="110.0" style="-fx-border-color: black; -fx-border-radius: 5;" text="Asignar" />
+      <Button alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Regresar" prefHeight="38.0" prefWidth="110.0" style="-fx-border-color: black; -fx-border-radius: 5;" text="Regresar" />
+   </children>
 </AnchorPane>
