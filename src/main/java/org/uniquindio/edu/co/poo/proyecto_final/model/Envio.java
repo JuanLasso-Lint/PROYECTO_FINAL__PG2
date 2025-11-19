@@ -5,12 +5,6 @@ import java.util.List;
 
 public class Envio implements Subject {
 
-    public enum EstadoEnvio {
-        SOLICITADO,
-        EN_RUTA,
-        ENTREGADO
-    }
-
     private EstadoEnvio estado;
     private List<Observer> observadores;
 

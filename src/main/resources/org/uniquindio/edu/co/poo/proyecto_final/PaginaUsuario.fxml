@@ -44,8 +44,8 @@
               <Button fx:id="gestion" mnemonicParsing="false" onAction="#GestionCliente" text="GESTIONAR MIS DATOS" />
             <Button fx:id="gestiondIRECCIONES" mnemonicParsing="false" onAction="#GestiondIRECCION" text="GESTIONAR MIS DIRECCIONES" GridPane.rowIndex="1" />
             <Button fx:id="envioM" mnemonicParsing="false" onAction="#MenuEnvio" prefHeight="25.0" prefWidth="144.0" text="MENU ENVIOS" GridPane.rowIndex="3" />
-            <Button fx:id="consultarE" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="CONSULTAR ENVIO" GridPane.rowIndex="4" />
-            <Button fx:id="descargarE" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="DESCARGAR REPORTE" GridPane.rowIndex="5" />
+            <Button fx:id="consultarE" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="CONSULTAR ENVIO" GridPane.rowIndex="4" onAction="#BuscarEnvio"/>
+            <Button fx:id="descargarE" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="DESCARGAR REPORTE" GridPane.rowIndex="5" onAction="#GenerarReporte"/>
             <Button fx:id="tarifa" mnemonicParsing="false" onAction="#Tarifa" prefHeight="25.0" prefWidth="144.0" text="TARIFA" GridPane.rowIndex="2" />
          </children>
       </GridPane>

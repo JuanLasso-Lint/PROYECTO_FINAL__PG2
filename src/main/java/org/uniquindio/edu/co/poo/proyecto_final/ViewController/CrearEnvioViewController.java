@@ -64,60 +64,6 @@ public class CrearEnvioViewController {
 
         servicioA.getItems().addAll("NINGUNO", "FRAGIL", "PRIORIDAD", "SEGURO");
     }
-/**
-
-    public void crearEnvio(ActionEvent event) throws IOException {
-
-        try {
-            String idEnvio = idenvio.getText();
-            String direccionTxt = direccionE.getText();
-
-            double peso = Double.parseDouble(pesoE.getText());
-            double volumen = Double.parseDouble(volumenE.getText());
-
-            TipoDistancia distancia = distanciaE.getValue();
-            TipoPrioridad prioridad = prioridadE.getValue();
-            String adicional = servicioA.getValue();
-
-            Tarifa tarifa = new Tarifa(
-                    peso,
-                    volumen,
-                    prioridad,
-                    0,
-                    distancia
-            );
-
-            EnvioBuilder envio = new EnvioBuilder.Builder(
-                    idEnvio,
-                    "CREADO",
-                    java.time.LocalDate.now(),
-                    new Direccion(direccionTxt),
-                    tarifa
-            ).build();
-
-            IEnvio envioFinal = envio;
-
-            switch (adicional) {
-                case "FRAGIL" -> envioFinal = new EnvioFragil(envioFinal);
-                case "PRIORIDAD" -> envioFinal = new EnvioPrioridad(envioFinal);
-                case "SEGURO" -> envioFinal = new EnvioSeguro(envioFinal);
-            }
-
-        } catch (Exception e) {
-            System.out.println("Error guardando envío: " + e.getMessage());
-    void SelcDirecciones(ActionEvent event) {
-        String cedula = txtcedulaUsuario.getText();
-
-        Usuario usuario = fachada.buscarUsuario(cedula);
-        if (usuario == null) {
-            System.out.println("Usuario no existe");
-            return;
-        }
-
-        List<Direccion> direcciones = usuario.getDirecciones();
-        SeleccionDirecciones.getItems().setAll(direcciones);
-    }
-    **/
 
 @FXML
 void seleccionDirecciones (ActionEvent event) {
@@ -132,13 +78,6 @@ void seleccionDirecciones (ActionEvent event) {
     List<Direccion> direcciones = usuario.getDirecciones();
     SeleccionDirecciones.getItems().setAll(direcciones);
 }
-
-
-
-
-
-
-
 
     @FXML
     void crearEnvio(ActionEvent event) throws IOException {

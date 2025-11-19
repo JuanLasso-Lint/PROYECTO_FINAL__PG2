@@ -1,5 +1,6 @@
 package org.uniquindio.edu.co.poo.proyecto_final.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,6 +108,33 @@ public class Plataforma {
 
     public List<EnvioBuilder> getListaEnvios() {
         return listaEnvios;
+    }
+
+
+    public EnvioBuilder RegistrarEnvio(EnvioBuilder envio) {
+
+        listaEnvios.add(envio);
+
+        return envio;
+    }
+
+    public List<EnvioBuilder> buscarEnvios(LocalDate fecha, EstadoEnvio estado) {
+        List<EnvioBuilder> resultados = new ArrayList<>();
+
+        for (EnvioBuilder envio : listaEnvios) {
+
+            boolean coincideFecha = envio.getFechaCreacion().equals(fecha);
+
+            EstadoEnvio estadoEnvio = EstadoEnvio.valueOf(envio.getEstadoEnvio()); // <-- conversión
+
+            boolean coincideEstado = estadoEnvio == estado;
+
+            if (coincideFecha && coincideEstado) {
+                resultados.add(envio);
+            }
+        }
+
+        return resultados;
     }
 }
 

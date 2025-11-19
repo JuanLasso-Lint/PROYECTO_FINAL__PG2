@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.ReportePDFViewController">
+
+    <TextField fx:id="nombreReporte" promptText="Nombre del reporte" />
+    <TextField fx:id="fechaReporte" promptText="Fecha del reporte" />
+    <TextArea fx:id="contenidoReporte" promptText="Contenido del reporte" prefHeight="150"/>
+
+    <Button fx:id="btnGenerar" text="Generar PDF"/>
+    <Button fx:id="btnImprimir" text="Imprimir Reporte"/>
+
+</VBox>
