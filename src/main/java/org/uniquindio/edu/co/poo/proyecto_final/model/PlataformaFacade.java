@@ -117,6 +117,14 @@ public class PlataformaFacade {
     // ======================================================
     // ENVIOS
     // ======================================================
+    
+    public Optional<EnvioBuilder> buscarEnvio(String idEnvio) {
+        return servicioEnvio.mostrarEnvio(idEnvio);
+    }
+
+    public boolean editarEnvio(EnvioBuilder envioEditado) {
+        return servicioEnvio.editarEnvio(envioEditado);
+    }
 
     public boolean eliminarEnvio(String idEnvio) {
         return  servicioEnvio.eliminarEnvio(idEnvio);

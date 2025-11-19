@@ -15,6 +15,7 @@ import org.uniquindio.edu.co.poo.proyecto_final.model.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public class CrearEnvioViewController {
 
@@ -219,5 +220,12 @@ public class CrearEnvioViewController {
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) idE.getScene().getWindow();
         stage.setScene(scene);
+    }
+
+
+    public void Editar(ActionEvent actionEvent) {
+    }
+
+    public void CargarDatos(ActionEvent actionEvent) {
     }
 }

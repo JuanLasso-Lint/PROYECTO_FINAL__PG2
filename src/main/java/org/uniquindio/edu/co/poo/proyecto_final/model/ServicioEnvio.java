@@ -74,12 +74,22 @@ public class ServicioEnvio {
     }
 
 
-    public boolean editarEstado(String idEnvio, String nuevoEstado) {
-        Optional<EnvioBuilder> opt = buscarEnvio(idEnvio);
+    public boolean editarEnvio(EnvioBuilder envioEditado) {
+        Optional<EnvioBuilder> opt = buscarEnvio(envioEditado.getIdEnvio());
 
         if (opt.isEmpty()) return false;
 
-        opt.get().setEstadoEnvio(nuevoEstado);
+        EnvioBuilder original = opt.get();
+
+        // No se modifica el ID ni el usuario
+        original.setEstadoEnvio(envioEditado.getEstadoEnvio());
+        original.setDireccion(envioEditado.getDireccion());
+        original.setTarifa(envioEditado.getTarifa());
+        original.setFechaEstimadaEntrega(envioEditado.getFechaEstimadaEntrega());
+        original.setFechaHoraSalida(envioEditado.getFechaHoraSalida());
+        original.setFechaHoraEntregaReal(envioEditado.getFechaHoraEntregaReal());
+        original.setRepartidor(envioEditado.getRepartidor());
+
         return true;
     }
 

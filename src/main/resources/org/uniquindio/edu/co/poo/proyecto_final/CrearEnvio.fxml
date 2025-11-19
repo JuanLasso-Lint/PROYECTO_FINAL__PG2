@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.CrearEnvioViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.CrearEnvioViewController">
    <children>
       <TextField id="idenvio" layoutX="32.0" layoutY="120.0" />
       <Text layoutX="32.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Por favor introduzca los siguientes datos:" textAlignment="CENTER" wrappingWidth="479.033203125">
@@ -46,5 +46,7 @@
       <Text layoutX="384.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccion Direccion" />
       <ComboBox fx:id="SeleccionDirecciones" layoutX="384.0" layoutY="251.0" onAction="#seleccionDirecciones" prefWidth="150.0" />
       <Button fx:id="btnCargarDirecciones" layoutX="384.0" layoutY="297.0" mnemonicParsing="false" onAction="#CargarDireccionesUsuario" text="CARGAR DIRECCIONES" />
+      <Button layoutX="25.0" layoutY="364.0" mnemonicParsing="false" onAction="#Editar" text="Editar" visible="false" />
+      <Button layoutX="84.0" layoutY="364.0" mnemonicParsing="false" onAction="#CargarDatos" text="Editar" visible="false" />
    </children>
 </AnchorPane>
