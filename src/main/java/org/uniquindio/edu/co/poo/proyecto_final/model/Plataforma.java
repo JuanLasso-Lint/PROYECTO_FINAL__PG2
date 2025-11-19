@@ -10,13 +10,17 @@ public class Plataforma {
     private final List<Usuario> listaUsuarios;
     private final List<Repartidor> listaRepartidores;
     private final List<EnvioBuilder> listaEnvios;
+    private final List<Administrador> listaAdministradores;
 
 
     public Plataforma() {
         listaUsuarios = new ArrayList<>();
         listaRepartidores = new ArrayList<>();
         listaEnvios = new ArrayList<>();
+        listaAdministradores = new ArrayList<>();
     }
+
+
 
     public static Plataforma getInstance() {
         if (instance == null) {
@@ -25,15 +29,14 @@ public class Plataforma {
         return instance;
     }
 
-/**
-    public Usuario RegistrarUsuario(String nombre, String identificacion, String telefono, String email, String idUsuario) {
 
-        Usuario usuario = new Usuario(nombre, identificacion, telefono, email, idUsuario);
-        listaUsuarios.add(usuario);
+    public Administrador RegistrarAdmin (Administrador administrador) {
 
-        return usuario;
+        listaAdministradores.add(administrador);
+
+        return administrador;
     }
-**/
+
 
 
 
@@ -50,6 +53,20 @@ public class Plataforma {
 
         return false;
     }
+
+    public boolean LogearAdmin(String identificacionA, String idAdmni) {
+
+        for (Administrador a : listaAdministradores) {
+            if (a.getIdentificacion().equals(identificacionA) &&
+                    a.getIdAdministrador().equals(idAdmni)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 
     public Usuario buscarUsuario(String idUsuario) {
         for (int i = 0; i < listaUsuarios.size(); i++) {

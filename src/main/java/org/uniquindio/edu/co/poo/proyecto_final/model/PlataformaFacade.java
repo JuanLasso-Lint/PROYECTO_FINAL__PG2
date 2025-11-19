@@ -95,8 +95,11 @@ public class PlataformaFacade {
         return servicioRepartidor.registrarRepartidor(repartidor).isEmpty();
     }
 
-    public boolean editarRepartidor(String id, EstadoRepartidor estado) {
-        return servicioRepartidor.editarRepartidor(id, estado);
+    public boolean editarRepartidor(String idOriginal, String nuevoNombre, String nuevaIdentificacion,
+                                    String nuevoTelefono, String nuevoId, EstadoRepartidor nuevoEstado,
+                                    String nuevaZonaCobertura) {
+        return servicioRepartidor.editarRepartidor(idOriginal, nuevoNombre, nuevaIdentificacion,
+                nuevoTelefono, nuevoId, nuevoEstado, nuevaZonaCobertura);
     }
 
     public boolean eliminarRepartidor(String idRepartidor) {
