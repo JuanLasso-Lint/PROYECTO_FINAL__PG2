@@ -54,4 +54,15 @@ public class Tarifa {
         return estrategia.calcular(this);
     }
 
+    @Override
+    public String toString() {
+        return "Tarifa{" +
+                "peso=" + peso +
+                ", volumen=" + volumen +
+                ", recargo=" + recargo +
+                ", prioridad=" + prioridad +
+                ", distancia=" + distancia +
+                ", estrategia=" + estrategia +
+                '}';
+    }
 }

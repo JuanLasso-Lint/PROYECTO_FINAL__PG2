@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class EnvioBuilder implements IEnvio {
+public class EnvioBuilder implements IEnvio  {
 
     private String idEnvio;
     private String estadoEnvio;
@@ -156,12 +156,15 @@ public class EnvioBuilder implements IEnvio {
 
     }
 
+    public List<Incidencia> getListaIncidencias() {
+        return listaInciencias;
+    }
 
 
     //=============================
     //Patron Builder
 
-    public static class Builder {
+    public static class Builder implements Cloneable {
 
         private final String idEnvio;
         private final String estadoEnvio;
@@ -217,10 +220,16 @@ public class EnvioBuilder implements IEnvio {
         public EnvioBuilder build() {
             return new EnvioBuilder(this);
         }
+
+        public EnvioBuilder clone() throws CloneNotSupportedException {
+            return (EnvioBuilder) super.clone();
+        }
     }
 
     @Override
     public double CalcularCosto(Tarifa tarifa) {
         return tarifa.CalculoTarifa();
     }
+
+
 }

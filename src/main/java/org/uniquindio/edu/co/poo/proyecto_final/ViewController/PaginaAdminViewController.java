@@ -50,5 +50,16 @@ public class PaginaAdminViewController {
 
     }
 
+    @FXML
+    void irAEnvios(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/Envios.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
 
