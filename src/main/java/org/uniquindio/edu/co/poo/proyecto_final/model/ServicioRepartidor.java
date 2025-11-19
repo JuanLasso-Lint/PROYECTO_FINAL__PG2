@@ -33,16 +33,25 @@ public class ServicioRepartidor {
     }
 
     // Editar disponibilidad
-    public boolean editarRepartidor(String idRepartidor, EstadoRepartidor nuevaDisponibilidad) {
+    public boolean editarRepartidor(String idRepartidorOriginal, String nuevoNombre, String nuevaIdentificacion,
+                                    String nuevoTelefono, String nuevoIdRepartidor,
+                                    EstadoRepartidor nuevoEstadoDisponibilidad, String nuevaZonaCobertura) {
 
-        Optional<Repartidor> optionalRepartidor = buscarRepartidor(idRepartidor);
+        Optional<Repartidor> optionalRepartidor = buscarRepartidor(idRepartidorOriginal);
 
         if (optionalRepartidor.isEmpty()) {
             return false;
         }
 
         Repartidor r = optionalRepartidor.get();
-        r.setEstadoDisponibilidad(nuevaDisponibilidad);
+
+        r.setNombre(nuevoNombre);
+        r.setIdentificacion(nuevaIdentificacion);
+        r.setTelefono(nuevoTelefono);
+        r.setIdRepartidor(nuevoIdRepartidor);
+        r.setEstadoDisponibilidad(nuevoEstadoDisponibilidad);
+        r.setZonaCobertura(nuevaZonaCobertura);
+
         return true;
     }
     // Eliminar repartidor

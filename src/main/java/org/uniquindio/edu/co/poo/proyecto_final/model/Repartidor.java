@@ -57,7 +57,18 @@ public class Repartidor extends Persona {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Repartidor{" +
+                "idRepartidor='" + idRepartidor + '\'' +
+                ", estadoDisponibilidad=" + estadoDisponibilidad +
+                ", zonaCobertura='" + zonaCobertura + '\'' +
+                ", listEnviosDelRepartidor=" + listEnviosDelRepartidor +
+                ", nombre='" + nombre + '\'' +
+                ", identificacion='" + identificacion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
 }
 
 

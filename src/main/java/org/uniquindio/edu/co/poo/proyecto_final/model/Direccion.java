@@ -1,6 +1,5 @@
 package org.uniquindio.edu.co.poo.proyecto_final.model;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Direccion {
@@ -13,7 +12,7 @@ public class Direccion {
     private static ArrayList<Direccion> listaDirecciones = new ArrayList<>();
 
 
-    public Direccion(String idDireccion, String alias, String calle, String ciudad, String coordenadas) {
+    public Direccion(String idDireccion,  String alias, String calle, String ciudad, String coordenadas) {
         this.idDireccion = idDireccion;
         this.alias = alias;
         this.calle = calle;
@@ -21,8 +20,13 @@ public class Direccion {
         this.coordenadas = coordenadas;
     }
 
+    public void TodasListaDirecciones(Direccion direccion) {
+        listaDirecciones.add(direccion);
+    }
+
+    /**
     public static Direccion crearDireccion(String idDireccion, String alias, String calle, String ciudad, String coordenadas) {
-        Direccion nueva = new Direccion(idDireccion, alias, calle, ciudad, coordenadas);
+        Direccion nueva = new Direccion(idDireccion);
         nueva.idDireccion = idDireccion;
         nueva.alias = alias;
         nueva.calle = calle;
@@ -64,7 +68,7 @@ public class Direccion {
         }
         System.out.println("No se encontró una dirección con ese ID.");
     }
-
+**/
 
 
 
@@ -106,5 +110,17 @@ public class Direccion {
 
     public void setCordenadas(String cordenadas) {
         this.coordenadas = coordenadas;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "idDireccion='" + idDireccion + '\'' +
+                ", alias='" + alias + '\'' +
+                ", calle='" + calle + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", coordenadas='" + coordenadas + '\'' +
+                '}';
     }
 }

@@ -1,38 +1,42 @@
 package org.uniquindio.edu.co.poo.proyecto_final.ViewController;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.event.ActionEvent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PantallaInicioViewController {
+public class OpcionesAdminViewController {
+
 
     @FXML
-    private void OpcionUsuario(ActionEvent event) throws IOException {
+    void IrAmenuAdmin(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesUsuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/InicioSesionAdmin.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
 
         stage.setScene(scene);
         stage.show();
+
     }
 
-    @FXML
-    void OpcionAAdmin(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/OpcionesAdmin.fxml"));
+
+    @FXML
+    void irAregistro(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/PaginaAdmin.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();
 
         stage.setScene(scene);
         stage.show();
+
 
     }
 

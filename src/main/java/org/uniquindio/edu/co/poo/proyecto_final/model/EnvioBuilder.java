@@ -140,7 +140,12 @@ public class EnvioBuilder implements IEnvio {
 
     //MEtodos de la Inerfaz
 
-
+/**
+    @Override
+    public double CalcularCosto(Tarifa tarifa) {
+        return 0;
+    }
+ **/
 
     @Override
     public void gestorReportes() {

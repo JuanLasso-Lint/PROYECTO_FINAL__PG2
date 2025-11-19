@@ -33,6 +33,11 @@ public class ServicioEnvio {
         return r.getEstadoDisponibilidad() == EstadoRepartidor.DISPONIBLE;
     }
 
+    public boolean cancelarEnvio(String idEnvio) {
+        return editarEstado(idEnvio, "CANCELADO");
+    }
+
+
     private boolean envioYaAsignado(EnvioBuilder e) {
         return e.getRepartidor() != null;
     }

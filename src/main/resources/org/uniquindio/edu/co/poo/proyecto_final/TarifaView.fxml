@@ -1,65 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.proyecto_final.ViewController.TarifaViewController">
+    <children>
+        <Text layoutX="206.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cálculo de Tarifa">
+            <font>
+                <Font name="Candara" size="27.0" />
+            </font>
+        </Text>
 
-    <center>
-        <VBox alignment="CENTER" spacing="14" padding="20">
+        <!-- CORREGIDO: id -> fx:id -->
+        <ComboBox fx:id="cbTipoTarifa" layoutX="386.0" layoutY="89.0" prefWidth="150.0" />
+        <ComboBox fx:id="cbPrioridad" layoutX="386.0" layoutY="151.0" prefWidth="150.0" />
+        <ComboBox fx:id="cbDistancia" layoutX="386.0" layoutY="210.0" prefWidth="150.0" />
 
-            <Label text="Cálculo de Tarifa"
-                   style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+        <TextField fx:id="txtPeso" layoutX="57.0" layoutY="89.0" />
+        <TextField fx:id="txtVolumen" layoutX="58.0" layoutY="152.0" />
+        <TextField fx:id="txtRecargo" layoutX="58.0" layoutY="210.0" />
 
-            <!-- Tipo de Tarifa -->
-            <HBox spacing="10">
-                <Label text="Tipo de tarifa:" />
-                <ComboBox fx:id="cbTipoTarifa" prefWidth="180" />
-            </HBox>
+        <Label fx:id="lblResultado" layoutX="239.0" layoutY="263.0" prefHeight="18.0" prefWidth="121.0" text="Resultado:" />
 
-            <!-- Peso -->
-            <HBox spacing="10">
-                <Label text="Peso (kg):" />
-                <TextField fx:id="txtPeso" prefWidth="180" />
-            </HBox>
+        <Button id="calcular" fx:id="calcular" layoutX="327.0" layoutY="332.0" mnemonicParsing="false" onAction="#calcularTarifa" text="Calcular" />
+        <Button fx:id="Regresar" layoutX="227.0" layoutY="332.0" mnemonicParsing="false" onAction="#regresarInicio" text="REGRESAR" />
 
-            <!-- Volumen -->
-            <HBox spacing="10">
-                <Label text="Volumen (m³):" />
-                <TextField fx:id="txtVolumen" prefWidth="180" />
-            </HBox>
+        <ImageView fitHeight="108.0" fitWidth="112.0" layoutX="488.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../Images/LogoEmpresa.png" />
+            </image>
+        </ImageView>
 
-            <!-- Prioridad -->
-            <HBox spacing="10">
-                <Label text="Prioridad:" />
-                <ComboBox fx:id="cbPrioridad" prefWidth="180" />
-            </HBox>
+        <Text layoutX="57.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso:" />
+        <Text layoutX="57.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volumen:" />
+        <Text layoutX="57.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recargo: " />
 
-            <!-- Distancia -->
-            <HBox spacing="10">
-                <Label text="Distancia:" />
-                <ComboBox fx:id="cbDistancia" prefWidth="180" />
-            </HBox>
-
-            <!-- Recargo adicional -->
-            <HBox spacing="10">
-                <Label text="Recargo ($):" />
-                <TextField fx:id="txtRecargo" prefWidth="180" />
-            </HBox>
-
-            <!-- Botón de cálculo -->
-            <Button fx:id="btnCalcular"
-                    text="Calcular Tarifa"
-                    prefWidth="160" />
-
-            <!-- Resultado -->
-            <Label fx:id="lblResultado"
-                   text=""
-                   style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-
-        </VBox>
-    </center>
-
-</BorderPane>
+        <Text layoutX="386.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo Tarifa: " wrappingWidth="62.4" />
+        <Text layoutX="385.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo Prioridad:" />
+        <Text layoutX="385.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo Distancia" />
+    </children>
+</AnchorPane>
