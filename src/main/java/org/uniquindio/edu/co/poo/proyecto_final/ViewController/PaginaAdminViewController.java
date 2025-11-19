@@ -14,7 +14,7 @@ public class PaginaAdminViewController {
     @FXML
     void IrAsignacionEnvio(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/MenuEnvioUsuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/uniquindio/edu/co/poo/proyecto_final/AsignarRepartidor.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) ((javafx.scene.control.Button)event.getSource()).getScene().getWindow();

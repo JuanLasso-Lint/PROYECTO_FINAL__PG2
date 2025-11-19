@@ -97,25 +97,50 @@ public class ServicioEnvio {
     // =========================================================
     // ASIGNACIÓN DE REPARTIDOR
     // =========================================================
-
     public boolean asignarRepartidor(String idEnvio, String idRepartidor, String nuevoEstadoEnvio) {
+
+        System.out.println(" Intentando asignar repartidor...");
+        System.out.println("ID Envío: " + idEnvio);
+        System.out.println("ID Repartidor: " + idRepartidor);
+        System.out.println("Nuevo estado: " + nuevoEstadoEnvio);
+
+        if (idEnvio == null || idEnvio.isBlank() || idRepartidor == null || idRepartidor.isBlank()) {
+            System.out.println(" ID de envío o repartidor inválido");
+            return false;
+        }
 
         Optional<EnvioBuilder> optEnvio = buscarEnvio(idEnvio);
         Optional<Repartidor> optRep = buscarRepartidor(idRepartidor);
 
-        if (optEnvio.isEmpty() || optRep.isEmpty()) return false;
+        if (optEnvio.isEmpty()) {
+            System.out.println(" Envío no encontrado");
+            return false;
+        }
+
+        if (optRep.isEmpty()) {
+            System.out.println(" Repartidor no encontrado");
+            return false;
+        }
 
         EnvioBuilder envio = optEnvio.get();
         Repartidor rep = optRep.get();
 
-        if (!repartidorDisponible(rep)) return false;
-        if (envioYaAsignado(envio)) return false;
+        if (!repartidorDisponible(rep)) {
+            System.out.println(" Repartidor no disponible");
+            return false;
+        }
+
+        if (envioYaAsignado(envio)) {
+            System.out.println(" Envío ya asignado");
+            return false;
+        }
 
         // ASIGNAR
         envio.setRepartidor(rep);
         envio.setEstadoEnvio(nuevoEstadoEnvio);
         rep.agregarListaEnviosDelRepartidor(envio);
 
+        System.out.println(" Asignación exitosa");
         return true;
     }
 
