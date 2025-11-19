@@ -15,5 +15,6 @@
       <Button layoutX="94.0" layoutY="122.0" mnemonicParsing="false" onAction="#irRegistroRepartidor" text="Registrar Repartidor" />
       <Button layoutX="94.0" layoutY="191.0" mnemonicParsing="false" onAction="#IrAsignacionEnvio" text="Asignar Repartidor" />
       <Button layoutX="94.0" layoutY="276.0" mnemonicParsing="false" onAction="#irPantallaInicio" text="Regresar" />
+      <Button layoutX="94.0" layoutY="233.0" mnemonicParsing="false" onAction="#irAEnvios" text="Lista Envios" />
    </children>
 </AnchorPane>
