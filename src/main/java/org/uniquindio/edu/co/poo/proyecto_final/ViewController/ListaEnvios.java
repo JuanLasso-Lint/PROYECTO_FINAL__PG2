@@ -74,4 +74,24 @@ public class ListaEnvios {
     void Regresar(ActionEvent event) {
         tablaListaEnvios.getScene().getWindow().hide();
     }
+
+
+    @FXML
+    void EliminarEnvio(ActionEvent event) {
+        EnvioBuilder seleccionado = tablaListaEnvios.getSelectionModel().getSelectedItem();
+
+        if (seleccionado == null) {
+            System.out.println("No se ha seleccionado ningún envío para eliminar");
+            return;
+        }
+
+        boolean eliminado = App.getFachada().eliminarEnvio(seleccionado.getIdEnvio());
+
+        if (eliminado) {
+            tablaListaEnvios.getItems().remove(seleccionado);
+            System.out.println(" Envío eliminado: " + seleccionado.getIdEnvio());
+        } else {
+            System.out.println("No se pudo eliminar el envío");
+        }
+    }
 }

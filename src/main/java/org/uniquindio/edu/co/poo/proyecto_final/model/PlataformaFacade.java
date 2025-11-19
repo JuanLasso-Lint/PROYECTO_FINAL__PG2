@@ -118,6 +118,10 @@ public class PlataformaFacade {
     // ENVIOS
     // ======================================================
 
+    public boolean eliminarEnvio(String idEnvio) {
+        return  servicioEnvio.eliminarEnvio(idEnvio);
+    }
+
     public boolean registrarEnvio(EnvioBuilder envio) {
         return servicioEnvio.registrarEnvio(envio).isEmpty();
     }
